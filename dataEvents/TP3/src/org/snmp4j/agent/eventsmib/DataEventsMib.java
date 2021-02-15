@@ -1,19 +1,13 @@
- 
+package org.snmp4j.agent.eventsmib;
 
 //--AgentGen BEGIN=_BEGIN
 //--AgentGen END
 
 import org.snmp4j.smi.*;
-import org.snmp4j.mp.SnmpConstants;
 import org.snmp4j.agent.*;
 import org.snmp4j.agent.mo.*;
-import org.snmp4j.agent.mo.snmp.*;
-import org.snmp4j.agent.mo.snmp.smi.*;
-import org.snmp4j.agent.request.*;
 import org.snmp4j.log.LogFactory;
 import org.snmp4j.log.LogAdapter;
-import org.snmp4j.agent.mo.snmp.tc.*;
-
 
 
 //--AgentGen BEGIN=_IMPORT
@@ -86,40 +80,36 @@ implements MOGroup
     // Column sub-identifier definitions for dataEventsEntry:
     public static final int colDataEventsIndex = 1;
     public static final int colDataEventsIdent = 2;
-    public static final int colDataEventsTimeYears = 3;
-    public static final int colDataEventsTimeMonths = 4;
-    public static final int colDataEventsTimeWeeks = 5;
-    public static final int colDataEventsTimeDays = 6;
-    public static final int colDataEventsTimeHours = 7;
-    public static final int colDataEventsTimeMinutes = 8;
-    public static final int colDataEventsTimeDeleteYears = 9;
-    public static final int colDataEventsTimeDeleteMonths = 10;
-    public static final int colDataEventsTimeDeleteWeeks = 11;
-    public static final int colDataEventsTimeDeleteDays = 12;
-    public static final int colDataEventsTimeDeleteHours = 13;
-    public static final int colDataEventsTimeDeleteMinutes = 14;
-    public static final int colDataEventsPastMsg = 15;
-    public static final int colDataEventsPresentMsg = 16;
-    public static final int colDataEventsFutureMsg = 17;
+    public static final int colDataEventsMsg = 3;
+    public static final int colDataEventsTimeYears = 4;
+    public static final int colDataEventsTimeMonths = 5;
+    public static final int colDataEventsTimeWeeks = 6;
+    public static final int colDataEventsTimeDays = 7;
+    public static final int colDataEventsTimeHours = 8;
+    public static final int colDataEventsTimeMinutes = 9;
+    public static final int colDataEventsTimeDeleteYears = 10;
+    public static final int colDataEventsTimeDeleteMonths = 11;
+    public static final int colDataEventsTimeDeleteWeeks = 12;
+    public static final int colDataEventsTimeDeleteDays = 13;
+    public static final int colDataEventsTimeDeleteHours = 14;
+    public static final int colDataEventsTimeDeleteMinutes = 15;
 
     // Column index definitions for dataEventsEntry:
     public static final int idxDataEventsIndex = 0;
     public static final int idxDataEventsIdent = 1;
-    public static final int idxDataEventsTimeYears = 2;
-    public static final int idxDataEventsTimeMonths = 3;
-    public static final int idxDataEventsTimeWeeks = 4;
-    public static final int idxDataEventsTimeDays = 5;
-    public static final int idxDataEventsTimeHours = 6;
-    public static final int idxDataEventsTimeMinutes = 7;
-    public static final int idxDataEventsTimeDeleteYears = 8;
-    public static final int idxDataEventsTimeDeleteMonths = 9;
-    public static final int idxDataEventsTimeDeleteWeeks = 10;
-    public static final int idxDataEventsTimeDeleteDays = 11;
-    public static final int idxDataEventsTimeDeleteHours = 12;
-    public static final int idxDataEventsTimeDeleteMinutes = 13;
-    public static final int idxDataEventsPastMsg = 14;
-    public static final int idxDataEventsPresentMsg = 15;
-    public static final int idxDataEventsFutureMsg = 16;
+    public static final int idxDataEventsMsg = 2;
+    public static final int idxDataEventsTimeYears = 3;
+    public static final int idxDataEventsTimeMonths = 4;
+    public static final int idxDataEventsTimeWeeks = 5;
+    public static final int idxDataEventsTimeDays = 6;
+    public static final int idxDataEventsTimeHours = 7;
+    public static final int idxDataEventsTimeMinutes = 8;
+    public static final int idxDataEventsTimeDeleteYears = 9;
+    public static final int idxDataEventsTimeDeleteMonths = 10;
+    public static final int idxDataEventsTimeDeleteWeeks = 11;
+    public static final int idxDataEventsTimeDeleteDays = 12;
+    public static final int idxDataEventsTimeDeleteHours = 13;
+    public static final int idxDataEventsTimeDeleteMinutes = 14;
 
   private MOTableSubIndex[] dataEventsEntryIndexes;
   private MOTableIndex dataEventsEntryIndex;
@@ -236,13 +226,17 @@ implements MOGroup
     });
 
         // Columns
-        MOColumn<?>[] dataEventsEntryColumns = new MOColumn<?>[17];
+        MOColumn<?>[] dataEventsEntryColumns = new MOColumn<?>[15];
         dataEventsEntryColumns[idxDataEventsIndex] =
         moFactory.createColumn(colDataEventsIndex,
                                SMIConstants.SYNTAX_COUNTER32,
                                moFactory.createAccess(MOAccessImpl.ACCESSIBLE_FOR_READ_ONLY));
         dataEventsEntryColumns[idxDataEventsIdent] =
         moFactory.createColumn(colDataEventsIdent,
+                               SMIConstants.SYNTAX_OCTET_STRING,
+                               moFactory.createAccess(MOAccessImpl.ACCESSIBLE_FOR_READ_ONLY));
+        dataEventsEntryColumns[idxDataEventsMsg] =
+        moFactory.createColumn(colDataEventsMsg,
                                SMIConstants.SYNTAX_OCTET_STRING,
                                moFactory.createAccess(MOAccessImpl.ACCESSIBLE_FOR_READ_ONLY));
         dataEventsEntryColumns[idxDataEventsTimeYears] =
@@ -292,18 +286,6 @@ implements MOGroup
         dataEventsEntryColumns[idxDataEventsTimeDeleteMinutes] =
         moFactory.createColumn(colDataEventsTimeDeleteMinutes,
                                SMIConstants.SYNTAX_INTEGER,
-                               moFactory.createAccess(MOAccessImpl.ACCESSIBLE_FOR_READ_ONLY));
-        dataEventsEntryColumns[idxDataEventsPastMsg] =
-        moFactory.createColumn(colDataEventsPastMsg,
-                               SMIConstants.SYNTAX_OCTET_STRING,
-                               moFactory.createAccess(MOAccessImpl.ACCESSIBLE_FOR_READ_ONLY));
-        dataEventsEntryColumns[idxDataEventsPresentMsg] =
-        moFactory.createColumn(colDataEventsPresentMsg,
-                               SMIConstants.SYNTAX_OCTET_STRING,
-                               moFactory.createAccess(MOAccessImpl.ACCESSIBLE_FOR_READ_ONLY));
-        dataEventsEntryColumns[idxDataEventsFutureMsg] =
-        moFactory.createColumn(colDataEventsFutureMsg,
-                               SMIConstants.SYNTAX_OCTET_STRING,
                                moFactory.createAccess(MOAccessImpl.ACCESSIBLE_FOR_READ_ONLY));
         // Table model
         dataEventsEntryModel =
@@ -387,6 +369,18 @@ implements MOGroup
     //--AgentGen BEGIN=dataEventsEntry::setDataEventsIdent
     //--AgentGen END
       super.setValue(idxDataEventsIdent, newColValue);
+    }
+    
+    public OctetString getDataEventsMsg() {
+    //--AgentGen BEGIN=dataEventsEntry::getDataEventsMsg
+    //--AgentGen END
+      return (OctetString) super.getValue(idxDataEventsMsg);
+    }  
+    
+    public void setDataEventsMsg(OctetString newColValue) {
+    //--AgentGen BEGIN=dataEventsEntry::setDataEventsMsg
+    //--AgentGen END
+      super.setValue(idxDataEventsMsg, newColValue);
     }
     
     public Integer32 getDataEventsTimeYears() {
@@ -533,42 +527,6 @@ implements MOGroup
       super.setValue(idxDataEventsTimeDeleteMinutes, newColValue);
     }
     
-    public OctetString getDataEventsPastMsg() {
-    //--AgentGen BEGIN=dataEventsEntry::getDataEventsPastMsg
-    //--AgentGen END
-      return (OctetString) super.getValue(idxDataEventsPastMsg);
-    }  
-    
-    public void setDataEventsPastMsg(OctetString newColValue) {
-    //--AgentGen BEGIN=dataEventsEntry::setDataEventsPastMsg
-    //--AgentGen END
-      super.setValue(idxDataEventsPastMsg, newColValue);
-    }
-    
-    public OctetString getDataEventsPresentMsg() {
-    //--AgentGen BEGIN=dataEventsEntry::getDataEventsPresentMsg
-    //--AgentGen END
-      return (OctetString) super.getValue(idxDataEventsPresentMsg);
-    }  
-    
-    public void setDataEventsPresentMsg(OctetString newColValue) {
-    //--AgentGen BEGIN=dataEventsEntry::setDataEventsPresentMsg
-    //--AgentGen END
-      super.setValue(idxDataEventsPresentMsg, newColValue);
-    }
-    
-    public OctetString getDataEventsFutureMsg() {
-    //--AgentGen BEGIN=dataEventsEntry::getDataEventsFutureMsg
-    //--AgentGen END
-      return (OctetString) super.getValue(idxDataEventsFutureMsg);
-    }  
-    
-    public void setDataEventsFutureMsg(OctetString newColValue) {
-    //--AgentGen BEGIN=dataEventsEntry::setDataEventsFutureMsg
-    //--AgentGen END
-      super.setValue(idxDataEventsFutureMsg, newColValue);
-    }
-    
     public Variable getValue(int column) {
     //--AgentGen BEGIN=dataEventsEntry::RowGetValue
     //--AgentGen END
@@ -577,6 +535,8 @@ implements MOGroup
         	    return getDataEventsIndex();
             case idxDataEventsIdent:
         	    return getDataEventsIdent();
+            case idxDataEventsMsg:
+        	    return getDataEventsMsg();
             case idxDataEventsTimeYears:
         	    return getDataEventsTimeYears();
             case idxDataEventsTimeMonths:
@@ -601,12 +561,6 @@ implements MOGroup
         	    return getDataEventsTimeDeleteHours();
             case idxDataEventsTimeDeleteMinutes:
         	    return getDataEventsTimeDeleteMinutes();
-            case idxDataEventsPastMsg:
-        	    return getDataEventsPastMsg();
-            case idxDataEventsPresentMsg:
-        	    return getDataEventsPresentMsg();
-            case idxDataEventsFutureMsg:
-        	    return getDataEventsFutureMsg();
             default:
                 return super.getValue(column);
         }
@@ -621,6 +575,9 @@ implements MOGroup
         	    break;
             case idxDataEventsIdent:
         	    setDataEventsIdent((OctetString)value);
+        	    break;
+            case idxDataEventsMsg:
+        	    setDataEventsMsg((OctetString)value);
         	    break;
             case idxDataEventsTimeYears:
         	    setDataEventsTimeYears((Integer32)value);
@@ -657,15 +614,6 @@ implements MOGroup
         	    break;
             case idxDataEventsTimeDeleteMinutes:
         	    setDataEventsTimeDeleteMinutes((Integer32)value);
-        	    break;
-            case idxDataEventsPastMsg:
-        	    setDataEventsPastMsg((OctetString)value);
-        	    break;
-            case idxDataEventsPresentMsg:
-        	    setDataEventsPresentMsg((OctetString)value);
-        	    break;
-            case idxDataEventsFutureMsg:
-        	    setDataEventsFutureMsg((OctetString)value);
         	    break;
             default:
                 super.setValue(column, value);

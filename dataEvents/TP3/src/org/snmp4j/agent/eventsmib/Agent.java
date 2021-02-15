@@ -1,6 +1,4 @@
- 
-
-
+package org.snmp4j.agent.eventsmib;
 
 //|:AgenPro|=_BEGIN
 //|AgenPro:|
@@ -28,10 +26,6 @@ import org.snmp4j.agent.request.RequestStatus;
 import org.snmp4j.agent.request.Request;
 import org.snmp4j.agent.request.SubRequestIterator;
 import org.snmp4j.agent.mo.DefaultMOFactory;
-import org.snmp4j.agent.mo.MOTableRowListener;
-import org.snmp4j.agent.mo.MOTableRowEvent;
-import org.snmp4j.agent.mo.snmp.TimeStamp;
-import org.snmp4j.agent.mo.MOMutableTableRow;
 import org.snmp4j.agent.mo.MOFactory;
 
 //|:AgenPro|=import
@@ -151,7 +145,7 @@ public class Agent implements VariableProvider {
       //|AgenPro:|
     }
     catch (DuplicateRegistrationException drex) {
-      logger.error("Duplicate registration: "+drex.getMessage()+"."+
+      logger.error("Duplicate registration: "+drex.getMessage()+ "" +
                    " MIB object registration may be incomplete!", drex);
     }
   }

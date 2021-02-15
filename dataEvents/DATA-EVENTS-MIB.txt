@@ -89,6 +89,7 @@ DataEventsEntry ::= SEQUENCE {
 
 	dataEventsIndex             Counter32,
 	dataEventsIdent             OCTET STRING,
+	dataEventsMsg               OCTET STRING,
 	dataEventsTimeYears         INTEGER,
 	dataEventsTimeMonths        INTEGER,
 	dataEventsTimeWeeks         INTEGER,
@@ -100,10 +101,7 @@ DataEventsEntry ::= SEQUENCE {
 	dataEventsTimeDeleteWeeks   INTEGER,
 	dataEventsTimeDeleteDays    INTEGER,
 	dataEventsTimeDeleteHours   INTEGER,
-	dataEventsTimeDeleteMinutes INTEGER,
-	dataEventsPastMsg           OCTET STRING,
-	dataEventsPresentMsg        OCTET STRING,
-	dataEventsFutureMsg         OCTET STRING }
+	dataEventsTimeDeleteMinutes INTEGER }
 
 
 dataEventsIndex OBJECT-TYPE
@@ -126,166 +124,146 @@ dataEventsIdent OBJECT-TYPE
 	::= { dataEventsEntry 2 }
 
 
-dataEventsTimeDeleteMinutes OBJECT-TYPE
-	SYNTAX  INTEGER
+dataEventsMsg OBJECT-TYPE
+	SYNTAX  OCTET STRING
 	MAX-ACCESS read-only
 	STATUS  current
 	DESCRIPTION
-		"Objeto que guarda o número de minutos que faltam para apagar o evento da mib"
-	-- 1.3.6.1.4.1.8888.5.1.14 --
-	-- 1.3.6.1.4.1.8888.5.1.14
-	::= { dataEventsEntry 14 }
-
-
-dataEventsTimeDeleteHours OBJECT-TYPE
-	SYNTAX  INTEGER
-	MAX-ACCESS read-only
-	STATUS  current
-	DESCRIPTION
-		"Objeto que gaurda o número de horas que faltam para apagar o evento da mib"
-	-- 1.3.6.1.4.1.8888.5.1.13 --
-	-- 1.3.6.1.4.1.8888.5.1.13
-	::= { dataEventsEntry 13 }
-
-
-dataEventsTimeDeleteDays OBJECT-TYPE
-	SYNTAX  INTEGER
-	MAX-ACCESS read-only
-	STATUS  current
-	DESCRIPTION
-		"Objeto que guarda o número de dias que faltam para apagar o evento da mib"
-	-- 1.3.6.1.4.1.8888.5.1.12 --
-	-- 1.3.6.1.4.1.8888.5.1.12
-	::= { dataEventsEntry 12 }
-
-
-dataEventsTimeDeleteWeeks OBJECT-TYPE
-	SYNTAX  INTEGER
-	MAX-ACCESS read-only
-	STATUS  current
-	DESCRIPTION
-		"Objeto que guarda o número de semanas que faltam para apagar o evento da mib"
-	-- 1.3.6.1.4.1.8888.5.1.11 --
-	-- 1.3.6.1.4.1.8888.5.1.11
-	::= { dataEventsEntry 11 }
-
-
-dataEventsTimeDeleteMonths OBJECT-TYPE
-	SYNTAX  INTEGER
-	MAX-ACCESS read-only
-	STATUS  current
-	DESCRIPTION
-		"Objeto que gaurda o número de meses que faltam para remover o evento da mib"
-	-- 1.3.6.1.4.1.8888.5.1.10 --
-	-- 1.3.6.1.4.1.8888.5.1.10
-	::= { dataEventsEntry 10 }
-
-
-dataEventsTimeDeleteYears OBJECT-TYPE
-	SYNTAX  INTEGER
-	MAX-ACCESS read-only
-	STATUS  current
-	DESCRIPTION
-		"Objeto que guarda o número de anos que faltam para remover o evento da mib"
-	-- 1.3.6.1.4.1.8888.5.1.9 --
-	-- 1.3.6.1.4.1.8888.5.1.9
-	::= { dataEventsEntry 9 }
-
-
-dataEventsTimeMinutes OBJECT-TYPE
-	SYNTAX  INTEGER
-	MAX-ACCESS read-only
-	STATUS  current
-	DESCRIPTION
-		"Objeto que guarda o número de minutos que faltam/passaram para/desde o evento."
-	-- 1.3.6.1.4.1.8888.5.1.8 --
-	-- 1.3.6.1.4.1.8888.5.1.8
-	::= { dataEventsEntry 8 }
-
-
-dataEventsTimeHours OBJECT-TYPE
-	SYNTAX  INTEGER
-	MAX-ACCESS read-only
-	STATUS  current
-	DESCRIPTION
-		"Objeto que guarda o número de horas que faltam/passaram para/desde o evento"
-	-- 1.3.6.1.4.1.8888.5.1.7 --
-	-- 1.3.6.1.4.1.8888.5.1.7
-	::= { dataEventsEntry 7 }
-
-
-dataEventsTimeDays OBJECT-TYPE
-	SYNTAX  INTEGER
-	MAX-ACCESS read-only
-	STATUS  current
-	DESCRIPTION
-		"Objeto que guarda o número de dias que faltam/passaram para/desde o evento"
-	-- 1.3.6.1.4.1.8888.5.1.6 --
-	-- 1.3.6.1.4.1.8888.5.1.6
-	::= { dataEventsEntry 6 }
-
-
-dataEventsTimeWeeks OBJECT-TYPE
-	SYNTAX  INTEGER
-	MAX-ACCESS read-only
-	STATUS  current
-	DESCRIPTION
-		"Objeto que guarda o número de semanas que faltam/passaram para/desde o evento"
-	-- 1.3.6.1.4.1.8888.5.1.5 --
-	-- 1.3.6.1.4.1.8888.5.1.5
-	::= { dataEventsEntry 5 }
-
-
-dataEventsTimeMonths OBJECT-TYPE
-	SYNTAX  INTEGER
-	MAX-ACCESS read-only
-	STATUS  current
-	DESCRIPTION
-		"Objetos que guarda o número de meses que faltam/passaram para/desde o evento."
-	-- 1.3.6.1.4.1.8888.5.1.4 --
-	-- 1.3.6.1.4.1.8888.5.1.4
-	::= { dataEventsEntry 4 }
-
-
-dataEventsTimeYears OBJECT-TYPE
-	SYNTAX  INTEGER
-	MAX-ACCESS read-only
-	STATUS  current
-	DESCRIPTION
-		"Objeto que guarda o número de anos que faltam/passaram para/desde o evento."
-	-- 1.3.6.1.4.1.8888.5.1.3 --
+		"Objeto que guarda a mensagem a apresentar mediante o centexto ser passado, presente ou futuro."
 	-- 1.3.6.1.4.1.8888.5.1.3
 	::= { dataEventsEntry 3 }
 
 
-dataEventsPastMsg OBJECT-TYPE
-	SYNTAX  OCTET STRING
+dataEventsTimeYears OBJECT-TYPE
+	SYNTAX  INTEGER
+	UNITS "anos"
 	MAX-ACCESS read-only
 	STATUS  current
 	DESCRIPTION
-		"Objeto que guarda a mensagem a apresentar quando o evento já se passou"
+		"Objeto que guarda o número de anos que faltam/passaram para/desde o evento."
+	-- 1.3.6.1.4.1.8888.5.1.4
+	::= { dataEventsEntry 4 }
+
+
+dataEventsTimeMonths OBJECT-TYPE
+	SYNTAX  INTEGER
+	UNITS "meses"
+	MAX-ACCESS read-only
+	STATUS  current
+	DESCRIPTION
+		"Objetos que guarda o número de meses que faltam/passaram para/desde o evento."
+	-- 1.3.6.1.4.1.8888.5.1.5
+	::= { dataEventsEntry 5 }
+
+
+dataEventsTimeWeeks OBJECT-TYPE
+	SYNTAX  INTEGER
+	UNITS "semanas"
+	MAX-ACCESS read-only
+	STATUS  current
+	DESCRIPTION
+		"Objeto que guarda o número de semanas que faltam/passaram para/desde o evento"
+	-- 1.3.6.1.4.1.8888.5.1.6
+	::= { dataEventsEntry 6 }
+
+
+dataEventsTimeDays OBJECT-TYPE
+	SYNTAX  INTEGER
+	UNITS "dias"
+	MAX-ACCESS read-only
+	STATUS  current
+	DESCRIPTION
+		"Objeto que guarda o número de dias que faltam/passaram para/desde o evento"
+	-- 1.3.6.1.4.1.8888.5.1.7
+	::= { dataEventsEntry 7 }
+
+
+dataEventsTimeHours OBJECT-TYPE
+	SYNTAX  INTEGER
+	UNITS "horas"
+	MAX-ACCESS read-only
+	STATUS  current
+	DESCRIPTION
+		"Objeto que guarda o número de horas que faltam/passaram para/desde o evento"
+	-- 1.3.6.1.4.1.8888.5.1.8
+	::= { dataEventsEntry 8 }
+
+
+dataEventsTimeMinutes OBJECT-TYPE
+	SYNTAX  INTEGER
+	UNITS "minutos"
+	MAX-ACCESS read-only
+	STATUS  current
+	DESCRIPTION
+		"Objeto que guarda o número de minutos que faltam/passaram para/desde o evento."
+	-- 1.3.6.1.4.1.8888.5.1.9
+	::= { dataEventsEntry 9 }
+
+
+dataEventsTimeDeleteYears OBJECT-TYPE
+	SYNTAX  INTEGER
+	UNITS "anos"
+	MAX-ACCESS read-only
+	STATUS  current
+	DESCRIPTION
+		"Objeto que guarda o número de anos que faltam para remover o evento da mib"
+	-- 1.3.6.1.4.1.8888.5.1.10
+	::= { dataEventsEntry 10 }
+
+
+dataEventsTimeDeleteMonths OBJECT-TYPE
+	SYNTAX  INTEGER
+	UNITS "meses"
+	MAX-ACCESS read-only
+	STATUS  current
+	DESCRIPTION
+		"Objeto que gaurda o número de meses que faltam para remover o evento da mib"
+	-- 1.3.6.1.4.1.8888.5.1.11
+	::= { dataEventsEntry 11 }
+
+
+dataEventsTimeDeleteWeeks OBJECT-TYPE
+	SYNTAX  INTEGER
+	UNITS "semanas"
+	MAX-ACCESS read-only
+	STATUS  current
+	DESCRIPTION
+		"Objeto que guarda o número de semanas que faltam para apagar o evento da mib"
+	-- 1.3.6.1.4.1.8888.5.1.12
+	::= { dataEventsEntry 12 }
+
+
+dataEventsTimeDeleteDays OBJECT-TYPE
+	SYNTAX  INTEGER
+	UNITS "dias"
+	MAX-ACCESS read-only
+	STATUS  current
+	DESCRIPTION
+		"Objeto que guarda o número de dias que faltam para apagar o evento da mib"
+	-- 1.3.6.1.4.1.8888.5.1.13
+	::= { dataEventsEntry 13 }
+
+
+dataEventsTimeDeleteHours OBJECT-TYPE
+	SYNTAX  INTEGER
+	UNITS "horas"
+	MAX-ACCESS read-only
+	STATUS  current
+	DESCRIPTION
+		"Objeto que gaurda o número de horas que faltam para apagar o evento da mib"
+	-- 1.3.6.1.4.1.8888.5.1.14
+	::= { dataEventsEntry 14 }
+
+
+dataEventsTimeDeleteMinutes OBJECT-TYPE
+	SYNTAX  INTEGER
+	UNITS "minutos"
+	MAX-ACCESS read-only
+	STATUS  current
+	DESCRIPTION
+		"Objeto que guarda o número de minutos que faltam para apagar o evento da mib"
 	-- 1.3.6.1.4.1.8888.5.1.15
 	::= { dataEventsEntry 15 }
-
-
-dataEventsPresentMsg OBJECT-TYPE
-	SYNTAX  OCTET STRING
-	MAX-ACCESS read-only
-	STATUS  current
-	DESCRIPTION
-		"Objeto que guarda a mensagem a enviar quando o evento se encontra a decorrer"
-	-- 1.3.6.1.4.1.8888.5.1.16
-	::= { dataEventsEntry 16 }
-
-
-dataEventsFutureMsg OBJECT-TYPE
-	SYNTAX  OCTET STRING
-	MAX-ACCESS read-only
-	STATUS  current
-	DESCRIPTION
-		"Objeto que guarda a mensagem a ser enviada quando o evento ainda se encontra por decorrer"
-	-- 1.3.6.1.4.1.8888.5.1.17
-	::= { dataEventsEntry 17 }
 
 
 -- Conformance
@@ -327,9 +305,7 @@ dataEventsMIBBasicGroup OBJECT-GROUP
 		dataEventsTimeDeleteDays,
 		dataEventsTimeDeleteHours,
 		dataEventsTimeDeleteMinutes,
-		dataEventsPastMsg,
-		dataEventsPresentMsg,
-		dataEventsFutureMsg,
+		dataEventsMsg,
 		dataEventsIndex,
 		dataEventsIdent }
 	STATUS  current

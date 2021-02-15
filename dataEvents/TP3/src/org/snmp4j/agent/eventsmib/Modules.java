@@ -1,4 +1,4 @@
- 
+package org.snmp4j.agent.eventsmib;
 
 //--AgentGen BEGIN=_BEGIN
 //--AgentGen END
