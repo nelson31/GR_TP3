@@ -66,6 +66,42 @@ public class Event {
     }
 
     /**
+     * Metodo que diz se este evento é passado
+     * (Ver melhor isto!!)
+     */
+    public boolean isFromPast(){
+
+        LocalDateTime atual = LocalDateTime.now();
+        LocalDateTime data = LocalDateTime.of(this.dataEvento,this.horaEvento);
+
+        return atual.until(data, ChronoUnit.DAYS) < 0;
+    }
+
+    /**
+     * Metodo que diz se este evento é presente
+     * (Ver melhor isto!!)
+     */
+    public boolean isFromPres(){
+
+        LocalDateTime atual = LocalDateTime.now();
+        LocalDateTime data = LocalDateTime.of(this.dataEvento,this.horaEvento);
+
+        return atual.until(data, ChronoUnit.DAYS) == 0;
+    }
+
+    /**
+     * Metodo que diz se este evento é futuro
+     * (Ver melhor isto!!)
+     */
+    public boolean isFromFut(){
+
+        LocalDateTime atual = LocalDateTime.now();
+        LocalDateTime data = LocalDateTime.of(this.dataEvento,this.horaEvento);
+
+        return atual.until(data, ChronoUnit.DAYS) > 0;
+    }
+
+    /**
      * Metodo que nos retorna o resultado do campo identificação no
      * formato OCTETSTRING
      */
@@ -81,18 +117,14 @@ public class Event {
     /**
      * Metodo que nos retorna o resultado do campo mensagem passada no
      * formato OCTETSTRING
-     * (Ver melhor isto!!)
      */
     public OctetString getMsgFormat(){
 
         OctetString o = new OctetString();
 
-        LocalDateTime atual = LocalDateTime.now();
-        LocalDateTime data = LocalDateTime.of(this.dataEvento,this.horaEvento);
-
-        if(atual.until(data, ChronoUnit.MINUTES) > 0) {
+        if(isFromFut()) {
             o.setValue(this.msgFut);
-        } else if (atual.until(data, ChronoUnit.MINUTES) < 0){
+        } else if (isFromPast()){
             o.setValue(this.msgPast);
         } else {
             o.setValue(this.msgPres);

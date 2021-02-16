@@ -113,6 +113,7 @@ implements MOGroup
 
   private MOTableSubIndex[] dataEventsEntryIndexes;
   private MOTableIndex dataEventsEntryIndex;
+  private AddtoMIB addMIB;
 
     @SuppressWarnings(value={"rawtypes"})
     private MOTable<DataEventsEntryRow, MOColumn,
@@ -164,23 +165,25 @@ implements MOGroup
    *    creation.
    */
   protected void createMO(MOFactory moFactory) {
+    // Criar o objeto que contem os dados a adicionar a MIB
+    this.addMIB = new AddtoMIB();
     addTCsToFactory(moFactory);
     dataEventsTotal = 
       moFactory.createScalar(oidDataEventsTotal,
                              moFactory.createAccess(MOAccessImpl.ACCESSIBLE_FOR_READ_ONLY), 
-                             new Counter32());
+                             new Counter32(this.addMIB.getTotalEventos()));
     dataEventsTotalPast = 
       moFactory.createScalar(oidDataEventsTotalPast,
                              moFactory.createAccess(MOAccessImpl.ACCESSIBLE_FOR_READ_ONLY), 
-                             new Counter32());
+                             new Counter32(this.addMIB.getTotalEventosPast()));
     dataEventsTotalPresent = 
       moFactory.createScalar(oidDataEventsTotalPresent,
                              moFactory.createAccess(MOAccessImpl.ACCESSIBLE_FOR_READ_ONLY), 
-                             new Counter32());
+                             new Counter32(this.addMIB.getTotalEventosPres()));
     dataEventsTotalFuture = 
       moFactory.createScalar(oidDataEventsTotalFuture,
                              moFactory.createAccess(MOAccessImpl.ACCESSIBLE_FOR_READ_ONLY), 
-                             new Counter32());
+                             new Counter32(this.addMIB.getTotalEventosFut()));
     createDataEventsEntry(moFactory);
   }
 
@@ -299,13 +302,11 @@ implements MOGroup
                                   dataEventsEntryIndex,
                                   dataEventsEntryColumns,
                                   dataEventsEntryModel);
-        // Add Rows
+        // Add Rows(Eu adicionei isto)
         int i = 1;
         MOMutableTableModel model = (MOMutableTableModel) dataEventsEntry.getModel();
 
-        AddtoMIB addMIB = new AddtoMIB();
-
-        for (Variable[] variables : addMIB.getTableRows()) {
+        for (Variable[] variables : this.addMIB.getTableRows()) {
             model.addRow(new DefaultMOMutableRow2PC(new OID(String.valueOf(i)),
                     variables));
             i++;
