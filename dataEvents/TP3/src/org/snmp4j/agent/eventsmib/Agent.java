@@ -12,6 +12,7 @@ import org.snmp4j.agent.*;
 import org.snmp4j.agent.cfg.*;
 import org.snmp4j.agent.io.*;
 import org.snmp4j.agent.io.prop.*;
+import org.snmp4j.agent.mo.MOAccessImpl;
 import org.snmp4j.mp.*;
 import org.snmp4j.smi.*;
 import org.snmp4j.transport.*;
@@ -110,12 +111,83 @@ public class Agent implements VariableProvider {
   public void run() {
     // initialize agent before registering our own modules
     agent.initialize();
+    /*try {
+      OID dataEventsTable = new OID(".1.3.6.1.4.1.8888.5.1");
+      MOTableBuilder builder = new MOTableBuilder(dataEventsTable)
+              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
+              .addColumnType(SMIConstants.SYNTAX_OCTET_STRING, MOAccessImpl.ACCESS_READ_ONLY)
+              .addColumnType(SMIConstants.SYNTAX_OCTET_STRING, MOAccessImpl.ACCESS_READ_ONLY)
+              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
+              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
+              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
+              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
+              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
+              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
+              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
+              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
+              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
+              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
+              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
+              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
+              // Normally you would begin loop over you two domain objects here
+              .addRowValue(new Integer32(1))
+              .addRowValue(new OctetString("00:00:00:00:01"))
+              .addRowValue(new OctetString("00:00:00:00:02"))
+              .addRowValue(new Integer32(24))
+              .addRowValue(new Integer32(1500))
+              .addRowValue(new Integer32(1500))
+              .addRowValue(new Integer32(1500))
+              .addRowValue(new Integer32(1500))
+              .addRowValue(new Integer32(24))
+              .addRowValue(new Integer32(1500))
+              .addRowValue(new Integer32(1500))
+              .addRowValue(new Integer32(1500))
+              .addRowValue(new Integer32(1500))
+              .addRowValue(new Integer32(24))
+              .addRowValue(new Integer32(24))
+              //next row
+              .addRowValue(new Integer32(2))
+              .addRowValue(new OctetString("00:00:00:00:01"))
+              .addRowValue(new OctetString("00:00:00:00:02"))
+              .addRowValue(new Integer32(24))
+              .addRowValue(new Integer32(1500))
+              .addRowValue(new Integer32(1500))
+              .addRowValue(new Integer32(1500))
+              .addRowValue(new Integer32(1500))
+              .addRowValue(new Integer32(24))
+              .addRowValue(new Integer32(1500))
+              .addRowValue(new Integer32(1500))
+              .addRowValue(new Integer32(1500))
+              .addRowValue(new Integer32(1500))
+              .addRowValue(new Integer32(24))
+              .addRowValue(new Integer32(24));
+      server.register(builder.build(), null);
+    } catch (DuplicateRegistrationException e){
+      e.printStackTrace();
+    }*/
     // this requires sysUpTime to be available.
     registerMIBs();
     // add proxy forwarder
     agent.setupProxyForwarder();
     // now continue agent setup and launch it.
     agent.run();
+    /* SO PARA TESTE
+    try {
+      ListEvents le = new ListEvents();
+      for(Event e : le.getEventos()){
+        //System.out.println("Ident: " + e.getIdentFormat());
+        System.out.println("Anos: " + e.getAnosFormat().getValue());
+        System.out.println("Meses: " + e.getMesesFormat().getValue());
+        System.out.println("Semanas: " + e.getSemanasFormat().getValue());
+        System.out.println("Dias: " + e.getDiasFormat().getValue());
+        System.out.println("Horas: " + e.getHorasFormat().getValue());
+        System.out.println("Minutos: " + e.getMinutosFormat().getValue());
+      }
+    } catch (IOException e){
+      System.out.println("Ficheiro não existente!!");
+    }
+    */
+    //System.out.println(this.getVariable(".1.3.6.1.4.1.8888.3.0"));
   }
 
   /**

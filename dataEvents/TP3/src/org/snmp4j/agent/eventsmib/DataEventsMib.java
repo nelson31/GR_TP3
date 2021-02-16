@@ -299,6 +299,17 @@ implements MOGroup
                                   dataEventsEntryIndex,
                                   dataEventsEntryColumns,
                                   dataEventsEntryModel);
+        // Add Rows
+        int i = 1;
+        MOMutableTableModel model = (MOMutableTableModel) dataEventsEntry.getModel();
+
+        AddtoMIB addMIB = new AddtoMIB();
+
+        for (Variable[] variables : addMIB.getTableRows()) {
+            model.addRow(new DefaultMOMutableRow2PC(new OID(String.valueOf(i)),
+                    variables));
+            i++;
+        }
   }
 
 
