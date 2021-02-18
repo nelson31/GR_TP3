@@ -35,6 +35,8 @@ import org.snmp4j.agent.mo.MOFactory;
 
 public class Agent implements VariableProvider {
 
+  public static final int REFRESHTIME = 30000;
+
   static {
     LogFactory.setLogFactory(new JavaLogFactory());
   }
@@ -111,66 +113,33 @@ public class Agent implements VariableProvider {
   public void run() {
     // initialize agent before registering our own modules
     agent.initialize();
-    /*try {
-      OID dataEventsTable = new OID(".1.3.6.1.4.1.8888.5.1");
-      MOTableBuilder builder = new MOTableBuilder(dataEventsTable)
-              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
-              .addColumnType(SMIConstants.SYNTAX_OCTET_STRING, MOAccessImpl.ACCESS_READ_ONLY)
-              .addColumnType(SMIConstants.SYNTAX_OCTET_STRING, MOAccessImpl.ACCESS_READ_ONLY)
-              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
-              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
-              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
-              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
-              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
-              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
-              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
-              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
-              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
-              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
-              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
-              .addColumnType(SMIConstants.SYNTAX_INTEGER32, MOAccessImpl.ACCESS_READ_ONLY)
-              // Normally you would begin loop over you two domain objects here
-              .addRowValue(new Integer32(1))
-              .addRowValue(new OctetString("00:00:00:00:01"))
-              .addRowValue(new OctetString("00:00:00:00:02"))
-              .addRowValue(new Integer32(24))
-              .addRowValue(new Integer32(1500))
-              .addRowValue(new Integer32(1500))
-              .addRowValue(new Integer32(1500))
-              .addRowValue(new Integer32(1500))
-              .addRowValue(new Integer32(24))
-              .addRowValue(new Integer32(1500))
-              .addRowValue(new Integer32(1500))
-              .addRowValue(new Integer32(1500))
-              .addRowValue(new Integer32(1500))
-              .addRowValue(new Integer32(24))
-              .addRowValue(new Integer32(24))
-              //next row
-              .addRowValue(new Integer32(2))
-              .addRowValue(new OctetString("00:00:00:00:01"))
-              .addRowValue(new OctetString("00:00:00:00:02"))
-              .addRowValue(new Integer32(24))
-              .addRowValue(new Integer32(1500))
-              .addRowValue(new Integer32(1500))
-              .addRowValue(new Integer32(1500))
-              .addRowValue(new Integer32(1500))
-              .addRowValue(new Integer32(24))
-              .addRowValue(new Integer32(1500))
-              .addRowValue(new Integer32(1500))
-              .addRowValue(new Integer32(1500))
-              .addRowValue(new Integer32(1500))
-              .addRowValue(new Integer32(24))
-              .addRowValue(new Integer32(24));
-      server.register(builder.build(), null);
-    } catch (DuplicateRegistrationException e){
-      e.printStackTrace();
-    }*/
     // this requires sysUpTime to be available.
     registerMIBs();
     // add proxy forwarder
     agent.setupProxyForwarder();
     // now continue agent setup and launch it.
     agent.run();
+    // Classe responsavel por atualizar a MIB
+    AtualizaMIB updateMIB = new AtualizaMIB(this.modules);
+    try{
+        while (true){
+
+            // Espera um certo tempo para fazer refresh na MIB
+            Thread.sleep(REFRESHTIME);
+
+            try {
+              // Faz update a MIB
+              updateMIB.atualizaMIB();
+            } catch (IOException e){
+              System.out.println("Nao consegui ler o ficheiro de eventos!!!");
+            }
+
+            System.out.println("Atualizado!!!");
+        }
+    } catch (InterruptedException e){
+        System.out.println("Erro no sleep!!!");
+    }
+
     /* SO PARA TESTE
     try {
       ListEvents le = new ListEvents();

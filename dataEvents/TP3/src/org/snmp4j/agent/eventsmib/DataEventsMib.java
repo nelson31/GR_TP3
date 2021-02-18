@@ -307,15 +307,18 @@ implements MOGroup
         MOMutableTableModel model = (MOMutableTableModel) dataEventsEntry.getModel();
 
         for (Variable[] variables : this.addMIB.getTableRows()) {
-            model.addRow(new DefaultMOMutableRow2PC(new OID(String.valueOf(i)),
-                    variables));
+            adicionaLinhaTabela(i, model, variables);
             i++;
         }
   }
 
+    public void adicionaLinhaTabela(int i, MOMutableTableModel model, Variable[] variables) {
+        model.addRow(new DataEventsEntryRow(new OID(String.valueOf(i)),
+                variables));
+    }
 
 
-  public void registerMOs(MOServer server, OctetString context) 
+    public void registerMOs(MOServer server, OctetString context)
     throws DuplicateRegistrationException 
   {
     // Scalar Objects

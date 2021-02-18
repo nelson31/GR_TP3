@@ -14,11 +14,23 @@ public class ListEvents {
     /* Nome do ficheiro de eventos */
     private static String FILE_NAME = "dataEvents.txt";
 
-    public ListEvents() throws IOException {
+    /**
+     * Construtor de ListEvents
+     */
+    public ListEvents() {
 
         this.eventos = new ArrayList<>();
+    }
 
-        // Ler as linahs do ficheiro de eventos
+    /**
+     * Metodo que obtem os dados dos eventos e os coloca em objetos
+     * representativos de Eventos
+     * @throws IOException
+     */
+    public void obtemDados() throws IOException {
+        // Eliminar os dados que possam estar na lista de eventos
+        this.eventos.clear();
+        // Ler as linhas do ficheiro de eventos
         List<String> linhas = ReadFile.read_lines(FILE_NAME);
         // Iterar pelas varias linhas e adicionar os respetivos campos
         for (String linha : linhas){

@@ -1,1 +1,2 @@
 "Final do 1ºSemestre 2020-2021";"O Semestre já acabou há:";"Enfim, terminou o semestre! Ufff!";"O final do Semestre tá quase, faltam:";2021-02-28;00:00;2021-03-02;20:00
+"Inicio do 2ºSemestre 2020-2021";"O Semestre já começou há:";"Enfim, começou o semestre! :(";"O início do Semestre tá quase, faltam:";2021-02-18;00:00;2021-03-02;20:00

@@ -13,7 +13,7 @@ public class AddtoMIB {
     // Lista de Eventos
     private ListEvents le;
     // Linhas a adicionar à tabela
-    private final List<Variable[]> tableRows = new ArrayList<>();
+    private List<Variable[]> tableRows;
     // Linha atual
     private int currentRow;
     // Coluna atual
@@ -35,9 +35,12 @@ public class AddtoMIB {
         currentRow = 0;
         currentCol = 0;
 
+        this.tableRows = new ArrayList<>();
+
         try {
             /* Adicionar os eventos à tabela(linhas) */
             this.le = new ListEvents();
+            this.le.obtemDados();
             // Numero total de eventos
             this.totalEventos = le.getEventos().size();
             // Adicionar os restantes valores dos eventos
