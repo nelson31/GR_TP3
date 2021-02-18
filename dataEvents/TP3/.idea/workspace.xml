@@ -23,7 +23,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../snmp4j-3.4.4/dist/snmp4j-3.4.4-javadoc.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -132,10 +132,10 @@
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
     <state x="693" y="263" width="524" height="507" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1033@0.0.1920.1033" timestamp="1613508880678" />
-    <state x="578" y="258" width="744" height="518" key="FileChooserDialogImpl" timestamp="1613510590049">
+    <state x="578" y="258" width="744" height="518" key="FileChooserDialogImpl" timestamp="1613660787821">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state x="578" y="258" width="744" height="518" key="FileChooserDialogImpl/0.0.1920.1033@0.0.1920.1033" timestamp="1613510590049" />
+    <state x="578" y="258" width="744" height="518" key="FileChooserDialogImpl/0.0.1920.1033@0.0.1920.1033" timestamp="1613660787821" />
     <state width="1920" height="263" key="GridCell.Tab.0.bottom" timestamp="1613649044161">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
@@ -172,13 +172,17 @@
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
     <state x="443" y="93" width="1024" height="847" key="SettingsEditor/0.0.1920.1033@0.0.1920.1033" timestamp="1613510594014" />
-    <state x="615" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1613643617167">
+    <state x="615" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1613660731711">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state x="615" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1033@0.0.1920.1033" timestamp="1613643617167" />
+    <state x="615" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1033@0.0.1920.1033" timestamp="1613660731711" />
     <state x="706" y="293" width="524" height="516" key="extract.method.dialog" timestamp="1613648593795">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
     <state x="706" y="293" width="524" height="516" key="extract.method.dialog/0.0.1920.1033@0.0.1920.1033" timestamp="1613648593795" />
+    <state x="257" y="82" width="1395" height="869" key="new project wizard" timestamp="1613660792807">
+      <screen x="0" y="0" width="1920" height="1033" />
+    </state>
+    <state x="257" y="82" width="1395" height="869" key="new project wizard/0.0.1920.1033@0.0.1920.1033" timestamp="1613660792807" />
   </component>
 </project>
