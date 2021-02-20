@@ -24,7 +24,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TP3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -92,26 +92,26 @@
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
     <state x="768" y="225" width="550" height="583" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1033@0.0.1920.1033" timestamp="1613678434602" />
-    <state x="743" y="273" width="744" height="486" key="FileChooserDialogImpl" timestamp="1613672267626">
+    <state x="743" y="273" width="744" height="486" key="FileChooserDialogImpl" timestamp="1613772855918">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state x="743" y="273" width="744" height="486" key="FileChooserDialogImpl/0.0.1920.1033@0.0.1920.1033" timestamp="1613672267626" />
-    <state width="1920" height="277" key="GridCell.Tab.0.bottom" timestamp="1613679430312">
+    <state x="743" y="273" width="744" height="486" key="FileChooserDialogImpl/0.0.1920.1033@0.0.1920.1033" timestamp="1613772855918" />
+    <state width="1920" height="277" key="GridCell.Tab.0.bottom" timestamp="1613772857146">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state width="1920" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1033@0.0.1920.1033" timestamp="1613679430312" />
-    <state width="1920" height="277" key="GridCell.Tab.0.center" timestamp="1613679430312">
+    <state width="1920" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1033@0.0.1920.1033" timestamp="1613772857146" />
+    <state width="1920" height="277" key="GridCell.Tab.0.center" timestamp="1613772857146">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state width="1920" height="277" key="GridCell.Tab.0.center/0.0.1920.1033@0.0.1920.1033" timestamp="1613679430312" />
-    <state width="1920" height="277" key="GridCell.Tab.0.left" timestamp="1613679430311">
+    <state width="1920" height="277" key="GridCell.Tab.0.center/0.0.1920.1033@0.0.1920.1033" timestamp="1613772857146" />
+    <state width="1920" height="277" key="GridCell.Tab.0.left" timestamp="1613772857145">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state width="1920" height="277" key="GridCell.Tab.0.left/0.0.1920.1033@0.0.1920.1033" timestamp="1613679430311" />
-    <state width="1920" height="277" key="GridCell.Tab.0.right" timestamp="1613679430312">
+    <state width="1920" height="277" key="GridCell.Tab.0.left/0.0.1920.1033@0.0.1920.1033" timestamp="1613772857145" />
+    <state width="1920" height="277" key="GridCell.Tab.0.right" timestamp="1613772857146">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state width="1920" height="277" key="GridCell.Tab.0.right/0.0.1920.1033@0.0.1920.1033" timestamp="1613679430312" />
+    <state width="1920" height="277" key="GridCell.Tab.0.right/0.0.1920.1033@0.0.1920.1033" timestamp="1613772857146" />
     <state x="764" y="452" width="392" height="128" key="ReplaceDuplicatesPrompt" timestamp="1613676783071">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
@@ -120,6 +120,10 @@
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
     <state x="443" y="93" width="1024" height="847" key="SettingsEditor/0.0.1920.1033@0.0.1920.1033" timestamp="1613661509383" />
+    <state x="615" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1613772813292">
+      <screen x="0" y="0" width="1920" height="1033" />
+    </state>
+    <state x="615" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1033@0.0.1920.1033" timestamp="1613772813292" />
     <state x="693" y="258" width="574" height="520" key="extract.method.dialog" timestamp="1613676769932">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>

@@ -317,6 +317,19 @@ implements MOGroup
                 variables));
     }
 
+    public void removeLinhaTabela(int i, MOMutableTableModel model){
+      model.removeRow(new OID(String.valueOf(i)));
+    }
+
+    public void removeLinhasExcesso(int tamanhoEventos){
+        MOMutableTableModel model = (MOMutableTableModel) this.getDataEventsEntry().getModel();
+        int tamanhoTabela = model.getRowCount();
+        int diferenca = tamanhoTabela - tamanhoEventos;
+        for(int i = 0 ; i < diferenca ; i++){
+            this.removeLinhaTabela(tamanhoTabela - i,model);
+        }
+    }
+
 
     public void registerMOs(MOServer server, OctetString context)
     throws DuplicateRegistrationException 

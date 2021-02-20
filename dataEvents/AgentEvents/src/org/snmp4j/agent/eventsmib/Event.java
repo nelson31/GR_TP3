@@ -162,9 +162,6 @@ public class Event {
         Integer32 i = new Integer32();
 
         i.setValue((int) atual.until(data, ChronoUnit.MONTHS));
-        if(i.getValue() < 0){
-            i.setValue(i.getValue() + 12);
-        }
 
         return i;
     }
@@ -182,9 +179,6 @@ public class Event {
         Integer32 i = new Integer32();
 
         i.setValue((int) atual.until(data, ChronoUnit.WEEKS));
-        if(i.getValue() < 0){
-            i.setValue(i.getValue() + 4);
-        }
 
         return i;
     }
@@ -202,9 +196,6 @@ public class Event {
         Integer32 i = new Integer32();
 
         i.setValue((int) atual.until(data, ChronoUnit.DAYS));
-        if(i.getValue() < 0){
-            i.setValue(i.getValue() + 7);
-        }
 
         return i;
     }
@@ -222,9 +213,6 @@ public class Event {
         Integer32 i = new Integer32();
 
         i.setValue((int) atual.until(data, ChronoUnit.HOURS));
-        if(i.getValue() < 0){
-            i.setValue(i.getValue() + 24);
-        }
 
         return i;
     }
@@ -242,9 +230,6 @@ public class Event {
         Integer32 i = new Integer32();
 
         i.setValue((int) atual.until(data, ChronoUnit.MINUTES));
-        if(i.getValue() < 0){
-            i.setValue(i.getValue() + 60);
-        }
 
         return i;
     }
@@ -255,12 +240,12 @@ public class Event {
      */
     public Integer32 getAnosDelFormat(){
 
-        LocalDateTime data = LocalDateTime.of(this.dataEvento,this.horaEvento);
+        LocalDateTime atual = LocalDateTime.now();
         LocalDateTime datadel = LocalDateTime.of(this.dataDelete,this.horaDelete);
 
         Integer32 i = new Integer32();
 
-        i.setValue((int) data.until(datadel, ChronoUnit.YEARS));
+        i.setValue((int) atual.until(datadel, ChronoUnit.YEARS));
 
         return i;
     }
@@ -271,16 +256,13 @@ public class Event {
      */
     public Integer32 getMesesDelFormat(){
 
-        LocalDateTime aux = LocalDateTime.of(this.dataEvento,this.horaEvento);
+        LocalDateTime aux = LocalDateTime.now();
         LocalDateTime datadel = LocalDateTime.of(this.dataDelete,this.horaDelete);
         LocalDateTime atual = aux.plusYears(aux.until(datadel, ChronoUnit.YEARS));
 
         Integer32 i = new Integer32();
 
         i.setValue((int) atual.until(datadel, ChronoUnit.MONTHS));
-        if(i.getValue() < 0){
-            i.setValue(i.getValue() + 12);
-        }
 
         return i;
     }
@@ -291,16 +273,13 @@ public class Event {
      */
     public Integer32 getSemanasDelFormat(){
 
-        LocalDateTime aux = LocalDateTime.of(this.dataEvento,this.horaEvento);
+        LocalDateTime aux = LocalDateTime.now();
         LocalDateTime datadel = LocalDateTime.of(this.dataDelete,this.horaDelete);
         LocalDateTime atual = aux.plusMonths(aux.until(datadel, ChronoUnit.MONTHS));
 
         Integer32 i = new Integer32();
 
         i.setValue((int) atual.until(datadel, ChronoUnit.WEEKS));
-        if(i.getValue() < 0){
-            i.setValue(i.getValue() + 4);
-        }
 
         return i;
     }
@@ -311,16 +290,13 @@ public class Event {
      */
     public Integer32 getDiasDelFormat(){
 
-        LocalDateTime aux = LocalDateTime.of(this.dataEvento,this.horaEvento);
+        LocalDateTime aux = LocalDateTime.now();
         LocalDateTime datadel = LocalDateTime.of(this.dataDelete,this.horaDelete);
         LocalDateTime atual = aux.plusWeeks(aux.until(datadel, ChronoUnit.WEEKS));
 
         Integer32 i = new Integer32();
 
         i.setValue((int) atual.until(datadel, ChronoUnit.DAYS));
-        if(i.getValue() < 0){
-            i.setValue(i.getValue() + 7);
-        }
 
         return i;
     }
@@ -331,16 +307,13 @@ public class Event {
      */
     public Integer32 getHorasDelFormat(){
 
-        LocalDateTime aux = LocalDateTime.of(this.dataEvento,this.horaEvento);
+        LocalDateTime aux = LocalDateTime.now();
         LocalDateTime datadel = LocalDateTime.of(this.dataDelete,this.horaDelete);
         LocalDateTime atual = aux.plusDays(aux.until(datadel, ChronoUnit.DAYS));
 
         Integer32 i = new Integer32();
 
         i.setValue((int) atual.until(datadel, ChronoUnit.HOURS));
-        if(i.getValue() < 0){
-            i.setValue(i.getValue() + 24);
-        }
 
         return i;
     }
@@ -351,17 +324,26 @@ public class Event {
      */
     public Integer32 getMinutosDelFormat(){
 
-        LocalDateTime aux = LocalDateTime.of(this.dataEvento,this.horaEvento);
+        LocalDateTime aux = LocalDateTime.now();
         LocalDateTime datadel = LocalDateTime.of(this.dataDelete,this.horaDelete);
         LocalDateTime atual = aux.plusHours(aux.until(datadel, ChronoUnit.HOURS));
 
         Integer32 i = new Integer32();
 
         i.setValue((int) atual.until(datadel, ChronoUnit.MINUTES));
-        if(i.getValue() < 0){
-            i.setValue(i.getValue() + 60);
-        }
 
         return i;
+    }
+
+    /**
+     * Metodo que nos diz se este é um evento que deve ser eliminado!!
+     * @return
+     */
+    public boolean toDelete(){
+
+        LocalDateTime atual = LocalDateTime.now();
+        LocalDateTime datadel = LocalDateTime.of(this.dataDelete,this.horaDelete);
+
+        return atual.until(datadel, ChronoUnit.MINUTES) < 0;
     }
 }

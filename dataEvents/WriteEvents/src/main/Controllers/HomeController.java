@@ -36,7 +36,7 @@ public class HomeController {
     private ListEvents le;
 
     // Nome do ficheiro de eventos
-    public static String EVENTS_DIR = "./../TP3/";
+    public static String EVENTS_DIR = "./../AgentEvents/";
     private static String EVENTS_FILENAME = "dataEvents.txt";
 
     public void initialize(){
