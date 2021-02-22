@@ -3,12 +3,10 @@ package org.snmp4j.agent.eventsmib;
 import org.snmp4j.smi.Integer32;
 import org.snmp4j.smi.OctetString;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
-import java.util.List;
 
 public class Event {
 
