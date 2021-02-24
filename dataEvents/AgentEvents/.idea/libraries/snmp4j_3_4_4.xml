@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="snmp4j-3.4.4">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../../snmp4j-3.4.4/dist/snmp4j-3.4.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../dependencias/snmp4j-3.4.4/dist/snmp4j-3.4.4.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -94,7 +94,7 @@ public class HomeController {
                 System.out.println("Agendar");
 
                 this.writeEvento();
-                this.moveFicheiro();
+                //this.moveFicheiro();
                 lancaAlerta(Alert.AlertType.CONFIRMATION, "Evento agendado", "Confirmado", "Evento agendado com sucesso!!!");
             } else {
                 lancaAlerta(Alert.AlertType.ERROR, "Erro no registo", "Erro nos argumentos", "Não foi possível agendar o evento!!!");
@@ -134,9 +134,9 @@ public class HomeController {
 
                 lista.remove(ind - 1);
 
-                Writer.create(this.le.toString(),EVENTS_FILENAME);
+                Writer.create(this.le.toString(),EVENTS_DIR + EVENTS_FILENAME);
 
-                this.moveFicheiro();
+                //this.moveFicheiro();
 
                 lancaAlerta(Alert.AlertType.CONFIRMATION, "Evento eliminado", "Eliminado", "Evento eliminado com sucesso!!!");
             } else {
@@ -177,7 +177,7 @@ public class HomeController {
 
         Event e = new Event(0,identButton.getText(),msgpastButton.getText(),msgpresButton.getText(),msgfutButton.getText(),data,hora,datadel,horadel);
         this.le.addEvento(e);
-        Writer.create(this.le.toString(),EVENTS_FILENAME);
+        Writer.write(e.toString(),EVENTS_DIR + EVENTS_FILENAME);
     }
 
     /**

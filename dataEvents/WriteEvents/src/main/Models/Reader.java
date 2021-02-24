@@ -1,8 +1,7 @@
 package main.Models;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.channels.FileLock;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,12 +25,20 @@ public class Reader {
             throws IOException
     {
         List<String> content = new ArrayList<>();
-        BufferedReader br = new BufferedReader(new FileReader(filename));
+
+        FileInputStream fis = new FileInputStream(filename);
+        BufferedReader br = new BufferedReader(new InputStreamReader(fis));
+        /* Obtemos acesso exclusivo ao ficheiro de logs */
+        FileLock fl = fis.getChannel().lock(0,Long.MAX_VALUE,true);
+
         String line;
         while((line = br.readLine()) != null){
             content.add(line);
         }
+
+        fl.release();
         br.close();
+
         return content;
     }
 

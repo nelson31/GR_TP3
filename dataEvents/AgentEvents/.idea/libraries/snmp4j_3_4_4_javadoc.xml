@@ -2,7 +2,7 @@
   <library name="snmp4j-3.4.4-javadoc">
     <CLASSES />
     <JAVADOC>
-      <root url="jar://$PROJECT_DIR$/../../../../snmp4j-3.4.4/dist/snmp4j-3.4.4-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../dependencias/snmp4j-3.4.4/dist/snmp4j-3.4.4-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES />
   </library>

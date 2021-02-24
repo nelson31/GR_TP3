@@ -137,6 +137,7 @@ public class Agent implements VariableProvider {
               updateMIB.atualizaMIB();
             } catch (IOException e){
               System.out.println("Nao consegui ler o ficheiro de eventos!!!");
+              e.printStackTrace();
             }
 
             System.out.println("Atualizado!!!");

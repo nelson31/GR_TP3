@@ -18,16 +18,16 @@
   <component name="ProjectId" id="1oexKcMxWI7ltaM8jNmpdE6g1Mq" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../AgentEvents" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -39,15 +39,11 @@
   </component>
   <component name="RunManager">
     <configuration name="WriteEventsApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-15" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="main.WriteEventsApp" />
       <module name="WriteEvents" />
-      <option name="VM_PARAMETERS" value="--module-path $PROJECT_DIR$/../dependencias/javafx-sdk-15.0.1/lib --add-modules javafx.controls,javafx.fxml" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="VM_PARAMETERS" value="--module-path $PROJECT_DIR$/../../../../../TP2/GR2020_TP2.git/trunk/Modulo2/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -70,6 +66,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -82,59 +79,5 @@
       <updated>1613660794304</updated>
     </task>
     <servers />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="418" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614178688909">
-      <screen x="0" y="0" width="1920" height="1033" />
-    </state>
-    <state x="418" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1033@0.0.1920.1033" timestamp="1614178688909" />
-    <state x="768" y="225" width="550" height="583" key="#com.intellij.ide.util.MemberChooser" timestamp="1613678434602">
-      <screen x="0" y="0" width="1920" height="1033" />
-    </state>
-    <state x="768" y="225" width="550" height="583" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1033@0.0.1920.1033" timestamp="1613678434602" />
-    <state x="743" y="273" width="744" height="486" key="FileChooserDialogImpl" timestamp="1614187989338">
-      <screen x="0" y="0" width="1920" height="1033" />
-    </state>
-    <state x="743" y="273" width="744" height="486" key="FileChooserDialogImpl/0.0.1920.1033@0.0.1920.1033" timestamp="1614187989338" />
-    <state width="1920" height="277" key="GridCell.Tab.0.bottom" timestamp="1614189401510">
-      <screen x="0" y="0" width="1920" height="1033" />
-    </state>
-    <state width="1920" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1033@0.0.1920.1033" timestamp="1614189401510" />
-    <state width="1920" height="277" key="GridCell.Tab.0.center" timestamp="1614189401508">
-      <screen x="0" y="0" width="1920" height="1033" />
-    </state>
-    <state width="1920" height="277" key="GridCell.Tab.0.center/0.0.1920.1033@0.0.1920.1033" timestamp="1614189401508" />
-    <state width="1920" height="277" key="GridCell.Tab.0.left" timestamp="1614189401507">
-      <screen x="0" y="0" width="1920" height="1033" />
-    </state>
-    <state width="1920" height="277" key="GridCell.Tab.0.left/0.0.1920.1033@0.0.1920.1033" timestamp="1614189401507" />
-    <state width="1920" height="277" key="GridCell.Tab.0.right" timestamp="1614189401509">
-      <screen x="0" y="0" width="1920" height="1033" />
-    </state>
-    <state width="1920" height="277" key="GridCell.Tab.0.right/0.0.1920.1033@0.0.1920.1033" timestamp="1614189401509" />
-    <state x="764" y="452" width="392" height="128" key="ReplaceDuplicatesPrompt" timestamp="1613676783071">
-      <screen x="0" y="0" width="1920" height="1033" />
-    </state>
-    <state x="764" y="452" width="392" height="128" key="ReplaceDuplicatesPrompt/0.0.1920.1033@0.0.1920.1033" timestamp="1613676783071" />
-    <state x="443" y="93" width="1024" height="847" key="SettingsEditor" timestamp="1613661509383">
-      <screen x="0" y="0" width="1920" height="1033" />
-    </state>
-    <state x="443" y="93" width="1024" height="847" key="SettingsEditor/0.0.1920.1033@0.0.1920.1033" timestamp="1613661509383" />
-    <state x="615" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1613772813292">
-      <screen x="0" y="0" width="1920" height="1033" />
-    </state>
-    <state x="615" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1033@0.0.1920.1033" timestamp="1613772813292" />
-    <state x="693" y="258" width="574" height="520" key="extract.method.dialog" timestamp="1613676769932">
-      <screen x="0" y="0" width="1920" height="1033" />
-    </state>
-    <state x="693" y="258" width="574" height="520" key="extract.method.dialog/0.0.1920.1033@0.0.1920.1033" timestamp="1613676769932" />
-    <state x="624" y="234" key="run.anything.popup" timestamp="1613674142483">
-      <screen x="0" y="0" width="1920" height="1033" />
-    </state>
-    <state x="624" y="234" key="run.anything.popup/0.0.1920.1033@0.0.1920.1033" timestamp="1613674142483" />
-    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1613672958372">
-      <screen x="0" y="0" width="1920" height="1033" />
-    </state>
-    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup/0.0.1920.1033@0.0.1920.1033" timestamp="1613672958372" />
   </component>
 </project>

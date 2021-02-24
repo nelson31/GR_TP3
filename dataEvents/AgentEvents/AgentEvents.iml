@@ -7,8 +7,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="snmp4j-agent-3.3.6" level="project" />
     <orderEntry type="library" name="snmp4j-3.4.4" level="project" />
     <orderEntry type="library" name="snmp4j-3.4.4-javadoc" level="project" />
+    <orderEntry type="library" name="snmp4j-agent-3.3.6" level="project" />
+    <orderEntry type="library" name="snmp4j-agent-3.3.6-javadoc" level="project" />
   </component>
 </module>

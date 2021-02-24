@@ -1,6 +1,8 @@
 package main.Models;
 
 import java.io.*;
+import java.nio.channels.FileLock;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 /**
@@ -40,12 +42,16 @@ public class Writer {
     public static void write(String content, String filename)
             throws IOException
     {
+        FileOutputStream fos = new FileOutputStream(filename,true);
+        FileLock fl = fos.getChannel().lock();
         // O true serve para usar o modo append
-        PrintWriter pw = new PrintWriter(new FileOutputStream(filename,true));
 
-        pw.println(content);
+        fos.write((content + "\n").getBytes(StandardCharsets.UTF_8));
+        fos.flush();
+        fos.getFD().sync();
 
-        pw.close();
+        fl.release();
+        fos.close();
     }
 
     /**
@@ -57,12 +63,15 @@ public class Writer {
     public static void create(String content, String filename)
             throws IOException
     {
-        // O true serve para usar o modo append
-        PrintWriter pw = new PrintWriter(new FileWriter(filename));
+        FileOutputStream fos = new FileOutputStream(filename);
+        FileLock fl = fos.getChannel().lock();
 
-        pw.print(content);
+        fos.write(content.getBytes(StandardCharsets.UTF_8));
+        fos.flush();
+        fos.getFD().sync();
 
-        pw.close();
+        fl.release();
+        fos.close();
     }
 
 }
