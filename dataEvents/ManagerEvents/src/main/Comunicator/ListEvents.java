@@ -1,10 +1,8 @@
-package Comunicator;
+package main.Comunicator;
 
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ListEvents {
 
@@ -185,4 +183,139 @@ public class ListEvents {
         return result;
     }
 
+    /**
+     * Obter os anos todos de um conjunto de eventos
+     * @return
+     */
+    public Set<String> getAnos(){
+
+        Set<String> res = new TreeSet<>();
+
+        for(Event e : this.eventos.values()){
+
+            res.add(e.getAnoFormat());
+        }
+
+        return res;
+    }
+
+    /**
+     * Obter os meses todos de um conjunto de eventos
+     * @return
+     */
+    public Set<String> getMeses(){
+
+        Set<String> res = new TreeSet<>();
+
+        for(Event e : this.eventos.values()){
+
+            res.add(e.getMesFormat());
+        }
+
+        return res;
+    }
+
+    /**
+     * Obter os semanas todos de um conjunto de eventos
+     * @return
+     */
+    public Set<String> getSemanas(){
+
+        Set<String> res = new TreeSet<>();
+
+        for(Event e : this.eventos.values()){
+
+            res.add(e.getSemanaFormat());
+        }
+
+        return res;
+    }
+
+    /**
+     * Obter os semanas todos de um conjunto de eventos
+     * @return
+     */
+    public Set<String> getDias(){
+
+        Set<String> res = new TreeSet<>();
+
+        for(Event e : this.eventos.values()){
+
+            res.add(e.getDiaFormat());
+        }
+
+        return res;
+    }
+
+    /**
+     * Metodo que nos da os eventos de um determinado ano
+     * @param ano
+     * @return
+     */
+    public List<Event> getEventosAno(String ano){
+
+        List<Event> res = new ArrayList<>();
+
+        for(Event e : this.eventos.values()){
+
+            if(e.getAnoFormat().equals(ano)){
+                res.add(e);
+            }
+        }
+        return res;
+    }
+
+    /**
+     * Metodo que nos da os eventos de um determinado mes
+     * @param mes
+     * @return
+     */
+    public List<Event> getEventosMes(String mes){
+
+        List<Event> res = new ArrayList<>();
+
+        for(Event e : this.eventos.values()){
+
+            if(e.getMesFormat().equals(mes)){
+                res.add(e);
+            }
+        }
+        return res;
+    }
+
+    /**
+     * Metodo que nos da os eventos de um determinado semana
+     * @param semana
+     * @return
+     */
+    public List<Event> getEventosSemana(String semana){
+
+        List<Event> res = new ArrayList<>();
+
+        for(Event e : this.eventos.values()){
+
+            if(e.getSemanaFormat().equals(semana)){
+                res.add(e);
+            }
+        }
+        return res;
+    }
+
+    /**
+     * Metodo que nos da os eventos de um determinado dia
+     * @param dia
+     * @return
+     */
+    public List<Event> getEventosDia(String dia){
+
+        List<Event> res = new ArrayList<>();
+
+        for(Event e : this.eventos.values()){
+
+            if(e.getDiaFormat().equals(dia)){
+                res.add(e);
+            }
+        }
+        return res;
+    }
 }

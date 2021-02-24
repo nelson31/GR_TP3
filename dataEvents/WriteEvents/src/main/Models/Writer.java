@@ -1,8 +1,6 @@
 package main.Models;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.List;
 
 /**
@@ -43,7 +41,7 @@ public class Writer {
             throws IOException
     {
         // O true serve para usar o modo append
-        PrintWriter pw = new PrintWriter(new FileWriter(filename,true));
+        PrintWriter pw = new PrintWriter(new FileOutputStream(filename,true));
 
         pw.println(content);
 

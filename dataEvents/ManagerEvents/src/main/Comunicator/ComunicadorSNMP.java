@@ -1,4 +1,4 @@
-package Comunicator;
+package main.Comunicator;
 
 import org.snmp4j.PDU;
 import org.snmp4j.Snmp;
@@ -7,9 +7,6 @@ import org.snmp4j.smi.OID;
 import org.snmp4j.smi.VariableBinding;
 import org.snmp4j.util.*;
 
-import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -96,7 +93,7 @@ public class ComunicadorSNMP {
         // Lista de todos os atributos pedidos organizados por ordem em que
         // os processos aparecem na MIB
         List<List<String>> list_proc = new ArrayList<>();
-        System.out.println(res_list);
+        //System.out.println(res_list);
         // Iterar sobre os vários processos
         for(TreeEvent tre : res_list) {
 
@@ -117,41 +114,4 @@ public class ComunicadorSNMP {
         return list_proc;
     }
 
-    /**
-     * Fazer parse da data e hora obtidas aquando do pedido de GETBULK
-     * ao Agente SNMP a ser monitorizado
-     * @param vb
-     * @return timestamp
-     */
-    private LocalDateTime getLocalDateTime(VariableBinding vb) {
-        int[] bytes = octetStringToBytes(vb.toValueString());
-        int year = (bytes[0] * 256) + bytes[1];
-        int month = bytes[2];
-        int day = bytes[3];
-        int hour = bytes[4];
-        int minute = bytes[5];
-        int second = bytes[6];
-        int deci_sec = 0;
-        if (bytes.length >= 8)
-            deci_sec = bytes[7];
-        return LocalDateTime.of(year, month, day,
-                hour, minute, second, deci_sec * 100);
-    }
-
-    /**
-     * Metodo que a partir de uma OCTECTSTRING nos converte num array de inteiros
-     * @param value_ipar
-     * @return
-     */
-    public static int[] octetStringToBytes(String value_ipar)
-    {
-        String[] bytes = value_ipar.split("[^0-9A-Fa-f]");
-
-        int[] result = new int[bytes.length];
-
-        for(int counter = 0; counter < bytes.length; counter++)
-            result[counter] = Integer.parseInt(bytes[counter], 16);
-
-        return result;
-    }
 }

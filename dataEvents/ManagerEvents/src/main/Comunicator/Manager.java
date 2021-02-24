@@ -1,4 +1,4 @@
-package Comunicator;
+package main.Comunicator;
 
 import org.snmp4j.CommunityTarget;
 import org.snmp4j.Snmp;
@@ -11,7 +11,6 @@ import org.snmp4j.smi.OctetString;
 import org.snmp4j.transport.DefaultUdpTransportMapping;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 
 public class Manager {
 
@@ -27,8 +26,6 @@ public class Manager {
     private static String TRANSPORTE = "udp";
     /* Porta usada pelo agente do host */
     private static int PORTA = 3003;
-    /* Intervalo de tempo(segundos) em que são atualizadas as instancias da MIB!!*/
-    private static long TEMP_POLLING = 30000;
     /* Community String associada a este host */
     private static String COMMUNITY_STRING = "public";
 
@@ -45,6 +42,10 @@ public class Manager {
         TransportMapping trans = new DefaultUdpTransportMapping();
         this.snmp = new Snmp(trans);
         trans.listen();
+    }
+
+    public ListEvents getEventos() {
+        return eventos;
     }
 
     /**
@@ -75,23 +76,12 @@ public class Manager {
      */
     public void start(){
 
-        try {
-            /* Objeto que contem os metodos necessarios a comunicaao com o host */
-            ComunicadorSNMP c = new ComunicadorSNMP(this.snmp,this.getTarget());
-            this.eventos.setComSNMP(c);
+        /* Objeto que contem os metodos necessarios a comunicaao com o host */
+        ComunicadorSNMP c = new ComunicadorSNMP(this.snmp,this.getTarget());
+        this.eventos.setComSNMP(c);
 
-            while (true) {
-                // Efetua os pedidos e obtem a lista dos processos em execucao
-                this.eventos.gerePedidos();
-                System.out.println(this.eventos.toString());
-                //System.out.println("Temp_polling(segundos) = " + this.h.getTemp_polling());
-                Thread.sleep(TEMP_POLLING);
-            }
-
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-            System.out.println("Erro no sleep!!");
-        }
+        // Efetua os pedidos e obtem a lista dos processos em execucao
+        this.eventos.gerePedidos();
     }
 
 }

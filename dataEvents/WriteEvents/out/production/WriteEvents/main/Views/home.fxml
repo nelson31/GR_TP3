@@ -10,25 +10,25 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="769.0" prefWidth="1248.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controllers.HomeController">
+<AnchorPane prefHeight="769.0" prefWidth="1263.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controllers.HomeController">
    <children>
-      <Text layoutX="50.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agendamento de Eventos" textAlignment="CENTER" wrappingWidth="408.7294921875">
+      <Text layoutX="50.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agendamento de Eventos" textAlignment="CENTER" wrappingWidth="408.7294921875" AnchorPane.bottomAnchor="636.40380859375" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="789.2705078125" AnchorPane.topAnchor="41.79931640625">
          <font>
             <Font size="39.0" />
          </font>
       </Text>
-      <Button fx:id="sairButton" layoutX="942.0" layoutY="47.0" mnemonicParsing="false" onAction="#btSairAction" prefHeight="61.0" prefWidth="168.0" text="SAIR">
+      <Button fx:id="sairButton" layoutX="942.0" layoutY="47.0" mnemonicParsing="false" onAction="#btSairAction" prefHeight="61.0" prefWidth="168.0" text="SAIR" AnchorPane.rightAnchor="138.0" AnchorPane.topAnchor="47.0">
          <font>
             <Font size="21.0" />
          </font>
       </Button>
-      <Button fx:id="agendarButton" layoutX="416.0" layoutY="616.0" mnemonicParsing="false" onAction="#btAgendarAction" prefHeight="61.0" prefWidth="158.0" text="Agendar">
+      <Button fx:id="agendarButton" layoutX="416.0" layoutY="616.0" mnemonicParsing="false" onAction="#btAgendarAction" prefHeight="61.0" prefWidth="158.0" text="Agendar" AnchorPane.bottomAnchor="92.0" AnchorPane.leftAnchor="416.0">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Separator layoutX="632.0" layoutY="152.0" orientation="VERTICAL" prefHeight="622.0" prefWidth="19.0" />
-      <TableView fx:id="tableEvents" layoutX="657.0" layoutY="154.0" prefHeight="437.0" prefWidth="564.0" style="-fx-font-size: 16.0;">
+      <Separator layoutX="632.0" layoutY="152.0" orientation="VERTICAL" prefHeight="622.0" prefWidth="19.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="632.0" AnchorPane.rightAnchor="597.0" AnchorPane.topAnchor="152.0" />
+      <TableView fx:id="tableEvents" layoutX="663.0" layoutY="151.0" style="-fx-font-size: 16.0;" AnchorPane.bottomAnchor="181.0" AnchorPane.leftAnchor="663.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="151.0">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />
           <TableColumn prefWidth="75.0" text="C2" />
@@ -37,79 +37,79 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <TextField fx:id="insereIndexButton" layoutX="689.0" layoutY="616.0" prefHeight="61.0" prefWidth="250.0" promptText="index to remove">
+      <TextField fx:id="insereIndexButton" layoutX="689.0" layoutY="616.0" prefHeight="61.0" prefWidth="250.0" promptText="index to remove" AnchorPane.bottomAnchor="92.0" AnchorPane.rightAnchor="309.0">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <Button fx:id="eliminarButton" layoutX="974.0" layoutY="616.0" mnemonicParsing="false" onAction="#btEliminarAction" prefHeight="61.0" prefWidth="214.0" text="Eliminar Evento">
+      <Button fx:id="eliminarButton" layoutX="974.0" layoutY="616.0" mnemonicParsing="false" onAction="#btEliminarAction" prefHeight="61.0" prefWidth="214.0" text="Eliminar Evento" AnchorPane.bottomAnchor="92.0" AnchorPane.rightAnchor="60.0">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Text layoutX="36.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Identificacao Evento:">
+      <Text layoutX="36.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Identificacao Evento:" AnchorPane.bottomAnchor="552.2265625" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="1043.25" AnchorPane.topAnchor="197.7734375">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <TextField fx:id="identButton" layoutX="217.0" layoutY="185.0" prefHeight="45.0" prefWidth="409.0">
+      <TextField fx:id="identButton" layoutX="217.0" layoutY="185.0" prefHeight="45.0" prefWidth="409.0" AnchorPane.leftAnchor="217.0" AnchorPane.topAnchor="185.0">
          <font>
             <Font size="16.0" />
          </font></TextField>
-      <TextField fx:id="msgpastButton" layoutX="217.0" layoutY="245.0" prefHeight="45.0" prefWidth="409.0">
+      <TextField fx:id="msgpastButton" layoutX="217.0" layoutY="245.0" prefHeight="45.0" prefWidth="409.0" AnchorPane.leftAnchor="217.0" AnchorPane.topAnchor="245.0">
          <font>
             <Font size="16.0" />
          </font></TextField>
-      <TextField fx:id="msgpresButton" layoutX="217.0" layoutY="307.0" prefHeight="45.0" prefWidth="409.0">
+      <TextField fx:id="msgpresButton" layoutX="217.0" layoutY="307.0" prefHeight="45.0" prefWidth="409.0" AnchorPane.leftAnchor="217.0" AnchorPane.topAnchor="307.0">
          <font>
             <Font size="16.0" />
          </font></TextField>
-      <TextField fx:id="msgfutButton" layoutX="217.0" layoutY="369.0" prefHeight="45.0" prefWidth="409.0">
+      <TextField fx:id="msgfutButton" layoutX="217.0" layoutY="369.0" prefHeight="45.0" prefWidth="409.0" AnchorPane.leftAnchor="217.0" AnchorPane.topAnchor="369.0">
          <font>
             <Font size="16.0" />
          </font></TextField>
-      <Text layoutX="38.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mensagem passado:">
+      <Text layoutX="38.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mensagem passado:" AnchorPane.bottomAnchor="491.2265625" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="1045.625" AnchorPane.topAnchor="258.7734375">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="36.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mensagem presente:">
+      <Text layoutX="36.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mensagem presente:" AnchorPane.bottomAnchor="430.2265625" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="1042.9921875" AnchorPane.topAnchor="319.7734375">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="58.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mensagem futura:">
+      <Text layoutX="58.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mensagem futura:" AnchorPane.bottomAnchor="367.2265625" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="1043.4375" AnchorPane.topAnchor="382.7734375">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <DatePicker fx:id="dataButton" layoutX="158.0" layoutY="440.0" prefHeight="45.0" prefWidth="192.0" promptText="DD/MM/YYYY" style="-fx-font-size: 16.0;" />
-      <Text layoutX="24.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data do Evento:">
+      <DatePicker fx:id="dataButton" layoutX="158.0" layoutY="440.0" prefHeight="45.0" prefWidth="192.0" promptText="DD/MM/YYYY" style="-fx-font-size: 16.0;" AnchorPane.leftAnchor="158.0" AnchorPane.topAnchor="440.0" />
+      <Text layoutX="24.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data do Evento:" AnchorPane.bottomAnchor="297.2265625" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="1094.6640625" AnchorPane.topAnchor="453.1484375">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <DatePicker fx:id="datadelButton" layoutX="158.0" layoutY="518.0" prefHeight="45.0" prefWidth="192.0" promptText="DD/MM/YYYY" style="-fx-font-size: 16.0;" />
-      <Text layoutX="14.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data para apagar o Evento:" textAlignment="CENTER" wrappingWidth="139.0">
+      <DatePicker fx:id="datadelButton" layoutX="158.0" layoutY="518.0" prefHeight="45.0" prefWidth="192.0" promptText="DD/MM/YYYY" style="-fx-font-size: 16.0;" AnchorPane.leftAnchor="158.0" AnchorPane.topAnchor="518.0" />
+      <Text layoutX="14.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data para apagar o Evento:" textAlignment="CENTER" wrappingWidth="139.0" AnchorPane.bottomAnchor="209.6015625" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="1095.0" AnchorPane.topAnchor="521.3984375">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="357.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora para apagar o Evento:" textAlignment="CENTER" wrappingWidth="139.0">
+      <Text layoutX="357.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora para apagar o Evento:" textAlignment="CENTER" wrappingWidth="139.0" AnchorPane.bottomAnchor="210.6015625" AnchorPane.leftAnchor="357.0" AnchorPane.rightAnchor="752.0" AnchorPane.topAnchor="520.3984375">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="357.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora do Evento:">
+      <Text layoutX="357.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora do Evento:" AnchorPane.bottomAnchor="297.2265625" AnchorPane.leftAnchor="357.0" AnchorPane.rightAnchor="761.6640625" AnchorPane.topAnchor="453.1484375">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <TextField fx:id="horaButton" layoutX="497.0" layoutY="440.0" prefHeight="45.0" prefWidth="129.0" promptText="00:00">
+      <TextField fx:id="horaButton" layoutX="497.0" layoutY="440.0" prefHeight="45.0" prefWidth="129.0" promptText="00:00" AnchorPane.leftAnchor="497.0" AnchorPane.topAnchor="440.0">
          <font>
             <Font size="24.0" />
          </font></TextField>
-      <TextField fx:id="horadelButton" layoutX="497.0" layoutY="518.0" prefHeight="45.0" prefWidth="129.0" promptText="00:00">
+      <TextField fx:id="horadelButton" layoutX="497.0" layoutY="518.0" prefHeight="45.0" prefWidth="129.0" promptText="00:00" AnchorPane.leftAnchor="497.0" AnchorPane.topAnchor="518.0">
          <font>
             <Font size="24.0" />
          </font></TextField>

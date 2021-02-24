@@ -22,22 +22,28 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AgentEvents" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../TP2/GR_TP2.git/trunk/monitool/monitool_M2" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Models" />
       <recent name="Write_Logs" />
       <recent name="Comunicator" />
       <recent name="" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Views" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="ManagerEventsApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ManagerEventsApp" />
+      <option name="MAIN_CLASS_NAME" value="main.ManagerEventsApp" />
       <module name="ManagerEvents" />
+      <option name="VM_PARAMETERS" value="--module-path $PROJECT_DIR$/../dependencias/javafx-sdk-15.0.1/lib --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -74,49 +80,57 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="768" y="219" width="374" height="595" key="#com.intellij.ide.util.MemberChooser" timestamp="1614008278762">
+    <state x="418" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614179253663">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state x="768" y="219" width="374" height="595" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1033@0.0.1920.1033" timestamp="1614008278762" />
-    <state x="693" y="263" width="524" height="507" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1613929714026">
+    <state x="418" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1033@0.0.1920.1033" timestamp="1614179253663" />
+    <state x="768" y="219" width="374" height="595" key="#com.intellij.ide.util.MemberChooser" timestamp="1614163844039">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state x="693" y="263" width="524" height="507" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1033@0.0.1920.1033" timestamp="1613929714026" />
-    <state x="743" y="273" width="744" height="486" key="FileChooserDialogImpl" timestamp="1614006667981">
+    <state x="768" y="219" width="374" height="595" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1033@0.0.1920.1033" timestamp="1614163844039" />
+    <state x="693" y="263" width="524" height="507" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1614178142127">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state x="743" y="273" width="744" height="486" key="FileChooserDialogImpl/0.0.1920.1033@0.0.1920.1033" timestamp="1614006667981" />
-    <state width="1920" height="277" key="GridCell.Tab.0.bottom" timestamp="1614011934807">
+    <state x="693" y="263" width="524" height="507" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1033@0.0.1920.1033" timestamp="1614178142127" />
+    <state x="743" y="273" width="744" height="486" key="FileChooserDialogImpl" timestamp="1614178740713">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state width="1920" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1033@0.0.1920.1033" timestamp="1614011934806" />
-    <state width="1920" height="277" key="GridCell.Tab.0.center" timestamp="1614011934805">
+    <state x="743" y="273" width="744" height="486" key="FileChooserDialogImpl/0.0.1920.1033@0.0.1920.1033" timestamp="1614178740713" />
+    <state width="1920" height="277" key="GridCell.Tab.0.bottom" timestamp="1614187580445">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state width="1920" height="277" key="GridCell.Tab.0.center/0.0.1920.1033@0.0.1920.1033" timestamp="1614011934805" />
-    <state width="1920" height="277" key="GridCell.Tab.0.left" timestamp="1614011934804">
+    <state width="1920" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1033@0.0.1920.1033" timestamp="1614187580445" />
+    <state width="1920" height="277" key="GridCell.Tab.0.center" timestamp="1614187580443">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state width="1920" height="277" key="GridCell.Tab.0.left/0.0.1920.1033@0.0.1920.1033" timestamp="1614011934804" />
-    <state width="1920" height="277" key="GridCell.Tab.0.right" timestamp="1614011934806">
+    <state width="1920" height="277" key="GridCell.Tab.0.center/0.0.1920.1033@0.0.1920.1033" timestamp="1614187580443" />
+    <state width="1920" height="277" key="GridCell.Tab.0.left" timestamp="1614187580442">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state width="1920" height="277" key="GridCell.Tab.0.right/0.0.1920.1033@0.0.1920.1033" timestamp="1614011934806" />
-    <state x="443" y="93" width="1024" height="847" key="SettingsEditor" timestamp="1613839223294">
+    <state width="1920" height="277" key="GridCell.Tab.0.left/0.0.1920.1033@0.0.1920.1033" timestamp="1614187580442" />
+    <state width="1920" height="277" key="GridCell.Tab.0.right" timestamp="1614187580444">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state x="443" y="93" width="1024" height="847" key="SettingsEditor/0.0.1920.1033@0.0.1920.1033" timestamp="1613839223294" />
-    <state x="615" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1614003463459">
+    <state width="1920" height="277" key="GridCell.Tab.0.right/0.0.1920.1033@0.0.1920.1033" timestamp="1614187580444" />
+    <state x="443" y="93" width="1024" height="847" key="SettingsEditor" timestamp="1614179226693">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state x="615" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1033@0.0.1920.1033" timestamp="1614003463459" />
+    <state x="443" y="93" width="1024" height="847" key="SettingsEditor/0.0.1920.1033@0.0.1920.1033" timestamp="1614179226693" />
+    <state x="615" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1614160345623">
+      <screen x="0" y="0" width="1920" height="1033" />
+    </state>
+    <state x="615" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1033@0.0.1920.1033" timestamp="1614160345623" />
+    <state x="693" y="258" width="524" height="516" key="extract.method.dialog" timestamp="1614181001415">
+      <screen x="0" y="0" width="1920" height="1033" />
+    </state>
+    <state x="693" y="258" width="524" height="516" key="extract.method.dialog/0.0.1920.1033@0.0.1920.1033" timestamp="1614181001415" />
     <state x="624" y="234" key="run.anything.popup" timestamp="1614009821250">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
     <state x="624" y="234" key="run.anything.popup/0.0.1920.1033@0.0.1920.1033" timestamp="1614009821250" />
-    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1614011440889">
+    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1614178951523">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup/0.0.1920.1033@0.0.1920.1033" timestamp="1614011440889" />
+    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup/0.0.1920.1033@0.0.1920.1033" timestamp="1614178951523" />
   </component>
 </project>

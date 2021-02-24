@@ -53,6 +53,14 @@ public class ListEvents {
         }
     }
 
+    /**
+     * Adicionar evento individual
+     * @param e
+     */
+    public void addEvento(Event e){
+        this.eventos.add(e);
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

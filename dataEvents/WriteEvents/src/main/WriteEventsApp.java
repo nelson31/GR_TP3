@@ -29,7 +29,7 @@ public class WriteEventsApp extends Application {
         mainScene = new Scene(homefxml);
 
         primaryStage.setScene(mainScene);
-        //primaryStage.setResizable(false);
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 

@@ -1,5 +1,7 @@
-package Comunicator;
+package main.Comunicator;
 
+
+import java.time.LocalDateTime;
 
 public class Event {
 
@@ -189,6 +191,81 @@ public class Event {
 
     public void setMinutosDel(int minutosDel) {
         this.minutosDel = minutosDel;
+    }
+
+    /**
+     * Obter o ano do evento
+     * @return
+     */
+    public String getAnoFormat(){
+
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime data = now.plusYears(this.anos);
+        data = data.plusMonths(this.meses);
+        data = data.plusWeeks(this.semanas);
+        data = data.plusDays(this.dias);
+        data = data.plusHours(this.horas);
+        data = data.plusMinutes(this.minutos);
+        data = data.plusSeconds(now.getSecond());
+
+        return String.valueOf(data.getYear());
+    }
+
+    /**
+     * Obter o mes do evento
+     * @return
+     */
+    public String getMesFormat(){
+
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime data = now.plusYears(this.anos);
+        data = data.plusMonths(this.meses);
+        data = data.plusWeeks(this.semanas);
+        data = data.plusDays(this.dias);
+        data = data.plusHours(this.horas);
+        data = data.plusMinutes(this.minutos);
+        data = data.plusSeconds(now.getSecond());
+
+        return data.getMonth() + "-" + data.getYear();
+    }
+
+    /**
+     * Obter o semana do evento
+     * @return
+     */
+    public String getSemanaFormat(){
+
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime data = now.plusYears(this.anos);
+        data = data.plusMonths(this.meses);
+        data = data.plusWeeks(this.semanas);
+        data = data.plusDays(this.dias);
+        data = data.plusHours(this.horas);
+        data = data.plusMinutes(this.minutos);
+        data = data.plusSeconds(now.getSecond());
+
+        LocalDateTime domingo = data.plusDays(-data.getDayOfWeek().getValue());
+        LocalDateTime sabado = domingo.plusDays(6);
+
+        return "de " + domingo.toLocalDate().toString() + " a " + sabado.toLocalDate().toString();
+    }
+
+    /**
+     * Obter o dia do evento
+     * @return
+     */
+    public String getDiaFormat(){
+
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime data = now.plusYears(this.anos);
+        data = data.plusMonths(this.meses);
+        data = data.plusWeeks(this.semanas);
+        data = data.plusDays(this.dias);
+        data = data.plusHours(this.horas);
+        data = data.plusMinutes(this.minutos);
+        data = data.plusSeconds(now.getSecond());
+
+        return String.valueOf(data.toLocalDate());
     }
 
     @Override

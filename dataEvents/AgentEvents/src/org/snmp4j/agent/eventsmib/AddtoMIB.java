@@ -41,33 +41,35 @@ public class AddtoMIB {
             /* Adicionar os eventos à tabela(linhas) */
             this.le = new ListEvents();
             this.le.obtemDados();
-            // Numero total de eventos
-            this.totalEventos = le.getEventos().size();
             // Adicionar os restantes valores dos eventos
             for(Event e : le.getEventos()){
-                addRowValue(new Counter32(currentRow + 1));
-                addRowValue(e.getIdentFormat());
-                addRowValue(e.getMsgFormat());
-                addRowValue(e.getAnosFormat());
-                addRowValue(e.getMesesFormat());
-                addRowValue(e.getSemanasFormat());
-                addRowValue(e.getDiasFormat());
-                addRowValue(e.getHorasFormat());
-                addRowValue(e.getMinutosFormat());
-                addRowValue(e.getAnosDelFormat());
-                addRowValue(e.getMesesDelFormat());
-                addRowValue(e.getSemanasDelFormat());
-                addRowValue(e.getDiasDelFormat());
-                addRowValue(e.getHorasDelFormat());
-                addRowValue(e.getMinutosDelFormat());
-                if(e.isFromPast()){
-                    this.totalEventosPast++;
-                } else if(e.isFromFut()){
-                    this.totalEventosFut++;
-                } else if(e.isFromPres()){
-                    this.totalEventosPres++;
+                if(!e.toDelete()) {
+                    addRowValue(new Counter32(currentRow + 1));
+                    addRowValue(e.getIdentFormat());
+                    addRowValue(e.getMsgFormat());
+                    addRowValue(e.getAnosFormat());
+                    addRowValue(e.getMesesFormat());
+                    addRowValue(e.getSemanasFormat());
+                    addRowValue(e.getDiasFormat());
+                    addRowValue(e.getHorasFormat());
+                    addRowValue(e.getMinutosFormat());
+                    addRowValue(e.getAnosDelFormat());
+                    addRowValue(e.getMesesDelFormat());
+                    addRowValue(e.getSemanasDelFormat());
+                    addRowValue(e.getDiasDelFormat());
+                    addRowValue(e.getHorasDelFormat());
+                    addRowValue(e.getMinutosDelFormat());
+                    if (e.isFromPast()) {
+                        this.totalEventosPast++;
+                    } else if (e.isFromFut()) {
+                        this.totalEventosFut++;
+                    } else if (e.isFromPres()) {
+                        this.totalEventosPres++;
+                    }
                 }
             }
+            // Numero total de eventos
+            this.totalEventos = this.totalEventosPast + this.totalEventosPres + this.totalEventosFut;
         } catch (IOException e){
             System.out.println("Erro ao ler o ficheiro de eventos .txt!!!");
         }
