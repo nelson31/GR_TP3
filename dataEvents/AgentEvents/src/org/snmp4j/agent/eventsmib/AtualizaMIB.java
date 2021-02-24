@@ -44,12 +44,12 @@ public class AtualizaMIB {
 
             boolean suc = atualizaTabela(i, e);
             // Contar os tipos de eventos
-            if(suc && e.isFromPast()){
-                eventosPast++;
+            if(suc && e.isFromPres()){
+                eventosPres++;
             } else if(suc && e.isFromFut()){
                 eventosFut++;
-            } else if(suc && e.isFromPres()){
-                eventosPres++;
+            } else if(suc && e.isFromPast()){
+                eventosPast++;
             }
             i++;
         }

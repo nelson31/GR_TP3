@@ -59,12 +59,12 @@ public class AddtoMIB {
                     addRowValue(e.getDiasDelFormat());
                     addRowValue(e.getHorasDelFormat());
                     addRowValue(e.getMinutosDelFormat());
-                    if (e.isFromPast()) {
-                        this.totalEventosPast++;
+                    if (e.isFromPres()) {
+                        this.totalEventosPres++;
                     } else if (e.isFromFut()) {
                         this.totalEventosFut++;
-                    } else if (e.isFromPres()) {
-                        this.totalEventosPres++;
+                    } else if (e.isFromPast()) {
+                        this.totalEventosPast++;
                     }
                 }
             }
