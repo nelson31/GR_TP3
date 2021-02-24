@@ -6,13 +6,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import javax.swing.text.TableView;
-
+/**
+ * Classe WriteEventsApp responsavel por iniciar a execucao desta aplicação.
+ * Esta aplicaçao serve para escrever e eliminar eventos no ficheiro de eventos
+ *
+ * @author Nelson Faria e Miguel Oliveira
+ * @version 1.0 (02/2021)
+ */
 
 public class WriteEventsApp extends Application {
-
-    // Stage (O que esta a ser mostrado para o utilizador)
-    private static Stage stage;
 
     // Tela da Principal
     private static Scene mainScene;
@@ -20,8 +22,6 @@ public class WriteEventsApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-
-        stage = primaryStage;
 
         primaryStage.setTitle("Datas de Eventos");
 
@@ -33,14 +33,6 @@ public class WriteEventsApp extends Application {
         primaryStage.show();
     }
 
-    /**
-     * Usado para ser chamado quando se quiser mudar de tela
-     * @param scene
-     */
-    public static void changeScreen(Scene scene){
-
-        stage.setScene(scene);
-    }
 
     public static void main(String[] args) {
         launch(args);

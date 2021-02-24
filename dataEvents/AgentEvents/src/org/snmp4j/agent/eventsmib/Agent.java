@@ -12,7 +12,6 @@ import org.snmp4j.agent.*;
 import org.snmp4j.agent.cfg.*;
 import org.snmp4j.agent.io.*;
 import org.snmp4j.agent.io.prop.*;
-import org.snmp4j.agent.mo.MOAccessImpl;
 import org.snmp4j.mp.*;
 import org.snmp4j.smi.*;
 import org.snmp4j.transport.*;
@@ -32,6 +31,12 @@ import org.snmp4j.agent.mo.MOFactory;
 //|:AgenPro|=import
 //|AgenPro:|
 
+/**
+ * Classe Agent que é a classe principal do agente!!
+ *
+ * @author Nelson Faria(A84727) e Miguel Oliveira(A83819)
+ * @version 1.0 (02/2021)
+ */
 
 public class Agent implements VariableProvider {
 

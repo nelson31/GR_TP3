@@ -1,3 +1,3 @@
 "Final do 1ºSemestre 2020-2021";"O Semestre já acabou há:";"Enfim, terminou o semestre! Ufff!";"O final do Semestre tá quase, faltam:";2021-02-28;00:00;2021-03-02;20:00
-"Inicio do 2ºSemestre 2020-2021";"O Semestre já começou há:";"Enfim, começou o semestre! :(";"O início do Semestre tá quase, faltam:";2021-02-18;00:00;2021-03-02;20:00
 "Entrega TP3";"Já passou o prazo de entrega!!!!";"É para entregar agora!!!";"Ainda falta para a entrega:";2021-02-28;00:00;2021-03-20;12:00
+"Jogo Juventus-Porto";"O jogo já aconteceu à:";"O jogo é hoje!!!";"AInda falta para o jogo:";2021-03-02;20:00;2021-03-06;20:00
