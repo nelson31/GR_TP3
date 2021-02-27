@@ -190,7 +190,9 @@ public class Event {
 
         LocalDateTime aux = LocalDateTime.now();
         LocalDateTime data = LocalDateTime.of(this.dataEvento,this.horaEvento);
-        LocalDateTime atual = aux.plusWeeks(aux.until(data, ChronoUnit.WEEKS));
+        LocalDateTime atual = aux.plusMonths(aux.until(data, ChronoUnit.YEARS));
+        atual = atual.plusMonths(atual.until(data, ChronoUnit.MONTHS));
+        atual = atual.plusWeeks(atual.until(data, ChronoUnit.WEEKS));
 
         Integer32 i = new Integer32();
 

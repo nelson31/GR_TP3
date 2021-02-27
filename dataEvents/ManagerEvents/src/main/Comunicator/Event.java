@@ -2,6 +2,7 @@ package main.Comunicator;
 
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 public class Event {
 
@@ -200,13 +201,13 @@ public class Event {
     public String getAnoFormat(){
 
         LocalDateTime now = LocalDateTime.now();
-        LocalDateTime data = now.plusYears(this.anos);
-        data = data.plusMonths(this.meses);
-        data = data.plusWeeks(this.semanas);
-        data = data.plusDays(this.dias);
-        data = data.plusHours(this.horas);
-        data = data.plusMinutes(this.minutos);
-        data = data.plusSeconds(now.getSecond());
+        LocalDateTime data = now.plus(this.anos, ChronoUnit.YEARS);
+        data = data.plus(this.meses,ChronoUnit.MONTHS);
+        data = data.plus(this.semanas,ChronoUnit.WEEKS);
+        data = data.plus(this.dias,ChronoUnit.DAYS);
+        data = data.plus(this.horas,ChronoUnit.HOURS);
+        data = data.plus(this.minutos,ChronoUnit.MINUTES);
+        data = data.plus(now.getSecond(),ChronoUnit.SECONDS);
 
         return String.valueOf(data.getYear());
     }
@@ -218,13 +219,13 @@ public class Event {
     public String getMesFormat(){
 
         LocalDateTime now = LocalDateTime.now();
-        LocalDateTime data = now.plusYears(this.anos);
-        data = data.plusMonths(this.meses);
-        data = data.plusWeeks(this.semanas);
-        data = data.plusDays(this.dias);
-        data = data.plusHours(this.horas);
-        data = data.plusMinutes(this.minutos);
-        data = data.plusSeconds(now.getSecond());
+        LocalDateTime data = now.plus(this.anos, ChronoUnit.YEARS);
+        data = data.plus(this.meses,ChronoUnit.MONTHS);
+        data = data.plus(this.semanas,ChronoUnit.WEEKS);
+        data = data.plus(this.dias,ChronoUnit.DAYS);
+        data = data.plus(this.horas,ChronoUnit.HOURS);
+        data = data.plus(this.minutos,ChronoUnit.MINUTES);
+        data = data.plus(now.getSecond(),ChronoUnit.SECONDS);
 
         return data.getMonth() + "-" + data.getYear();
     }
@@ -236,13 +237,13 @@ public class Event {
     public String getSemanaFormat(){
 
         LocalDateTime now = LocalDateTime.now();
-        LocalDateTime data = now.plusYears(this.anos);
-        data = data.plusMonths(this.meses);
-        data = data.plusWeeks(this.semanas);
-        data = data.plusDays(this.dias);
-        data = data.plusHours(this.horas);
-        data = data.plusMinutes(this.minutos);
-        data = data.plusSeconds(now.getSecond());
+        LocalDateTime data = now.plus(this.anos, ChronoUnit.YEARS);
+        data = data.plus(this.meses,ChronoUnit.MONTHS);
+        data = data.plus(this.semanas,ChronoUnit.WEEKS);
+        data = data.plus(this.dias,ChronoUnit.DAYS);
+        data = data.plus(this.horas,ChronoUnit.HOURS);
+        data = data.plus(this.minutos,ChronoUnit.MINUTES);
+        data = data.plus(now.getSecond(),ChronoUnit.SECONDS);
 
         LocalDateTime domingo = data.plusDays(-data.getDayOfWeek().getValue());
         LocalDateTime sabado = domingo.plusDays(6);
@@ -257,13 +258,13 @@ public class Event {
     public String getDiaFormat(){
 
         LocalDateTime now = LocalDateTime.now();
-        LocalDateTime data = now.plusYears(this.anos);
-        data = data.plusMonths(this.meses);
-        data = data.plusWeeks(this.semanas);
-        data = data.plusDays(this.dias);
-        data = data.plusHours(this.horas);
-        data = data.plusMinutes(this.minutos);
-        data = data.plusSeconds(now.getSecond());
+        LocalDateTime data = now.plus(this.anos, ChronoUnit.YEARS);
+        data = data.plus(this.meses,ChronoUnit.MONTHS);
+        data = data.plus(this.semanas,ChronoUnit.WEEKS);
+        data = data.plus(this.dias,ChronoUnit.DAYS);
+        data = data.plus(this.horas,ChronoUnit.HOURS);
+        data = data.plus(this.minutos,ChronoUnit.MINUTES);
+        data = data.plus(now.getSecond(),ChronoUnit.SECONDS);
 
         return String.valueOf(data.toLocalDate());
     }

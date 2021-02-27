@@ -23,7 +23,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WriteEvents" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -137,22 +137,22 @@
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
     <state x="578" y="258" width="744" height="518" key="FileChooserDialogImpl/0.0.1920.1033@0.0.1920.1033" timestamp="1614424110804" />
-    <state width="1920" height="262" key="GridCell.Tab.0.bottom" timestamp="1614426282804">
+    <state width="1920" height="262" key="GridCell.Tab.0.bottom" timestamp="1614446728976">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state width="1920" height="262" key="GridCell.Tab.0.bottom/0.0.1920.1033@0.0.1920.1033" timestamp="1614426282804" />
-    <state width="1920" height="262" key="GridCell.Tab.0.center" timestamp="1614426282802">
+    <state width="1920" height="262" key="GridCell.Tab.0.bottom/0.0.1920.1033@0.0.1920.1033" timestamp="1614446728976" />
+    <state width="1920" height="262" key="GridCell.Tab.0.center" timestamp="1614446728973">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state width="1920" height="262" key="GridCell.Tab.0.center/0.0.1920.1033@0.0.1920.1033" timestamp="1614426282802" />
-    <state width="1920" height="262" key="GridCell.Tab.0.left" timestamp="1614426282802">
+    <state width="1920" height="262" key="GridCell.Tab.0.center/0.0.1920.1033@0.0.1920.1033" timestamp="1614446728973" />
+    <state width="1920" height="262" key="GridCell.Tab.0.left" timestamp="1614446728972">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state width="1920" height="262" key="GridCell.Tab.0.left/0.0.1920.1033@0.0.1920.1033" timestamp="1614426282802" />
-    <state width="1920" height="262" key="GridCell.Tab.0.right" timestamp="1614426282803">
+    <state width="1920" height="262" key="GridCell.Tab.0.left/0.0.1920.1033@0.0.1920.1033" timestamp="1614446728972" />
+    <state width="1920" height="262" key="GridCell.Tab.0.right" timestamp="1614446728975">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state width="1920" height="262" key="GridCell.Tab.0.right/0.0.1920.1033@0.0.1920.1033" timestamp="1614426282803" />
+    <state width="1920" height="262" key="GridCell.Tab.0.right/0.0.1920.1033@0.0.1920.1033" timestamp="1614446728975" />
     <state width="1920" height="342" key="GridCell.Tab.1.bottom" timestamp="1613573421023">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
