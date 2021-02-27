@@ -14,91 +14,108 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class HomeController {
 
+    /**
+     * Variável que guarda o período de atualização
+     * dos dados por parte do manager
+     */
+    private static final int ATUALIZATION_PERIOD = 30000;
+
     public Button sairButton;
-    public TableView eventsTable;
-    public ComboBox criterioButton;
-    public ComboBox valoresButton;
+    public TableView<EventModel> eventsTable;
+    public ComboBox<String> criterioButton;
+    public ComboBox<String> valoresButton;
 
     // Lista de Eventos
     private ListEvents le;
 
+    /**
+     * Variável usada para garantir exclusão
+     * mútua no acesso à tabela
+     */
+    private Lock tableLock;
+
 
     public void initialize() throws IOException {
-
-        // Efetuar os pedidos SNMP ao Agente para obter os eventos
-        Manager m = new Manager();
-        m.start();
-
-        // Buscar a lista de eventos resultante
-        this.le = m.getEventos();
 
         // Definir os criterios de filtragem
         Set<String> crit = this.getCriterios();
         ObservableList<String> listaitems = FXCollections.observableArrayList(crit);
         criterioButton.setItems(listaitems);
         criterioButton.setValue("Todos");
+        this.tableLock = new ReentrantLock(true);
+
+        Manager m = new Manager();
+        m.start();
+
+        this.le = m.getEventos();
 
         // Criar a tabela
         criarTable();
 
-        for(Event e : this.le.getEventos().values()){
-            EventModel em = new EventModel(e.getIndex(),e.getIdentificacao(),e.getMsg(),e.getAnos(),e.getMeses(),e.getSemanas(),e.getDias(),e.getHoras(),e.getMinutos());
+        for (Event e : this.le.getEventos().values()) {
+            EventModel em = new EventModel(e.getIndex(), e.getIdentificacao(), e.getMsg(), e.getAnos(), e.getMeses(), e.getSemanas(), e.getDias(), e.getHoras(), e.getMinutos());
             eventsTable.getItems().add(em);
         }
 
+        Thread actualizator = new Thread(new EventsAtualizator(ATUALIZATION_PERIOD,
+                new Manager(),le,eventsTable,tableLock));
+        actualizator.start();
     }
 
     private void criarTable() {
         // Indice do evento
-        TableColumn tcIndex = new TableColumn("Index");
+        TableColumn<EventModel,Integer> tcIndex = new TableColumn<>("Index");
         tcIndex.setEditable(false);
         tcIndex.setReorderable(false);
         tcIndex.setCellValueFactory(new PropertyValueFactory<>("index"));
         // Identificacao Evento
-        TableColumn tcIdent = new TableColumn("Identificação");
+        TableColumn<EventModel,String> tcIdent = new TableColumn<>("Identificação");
         tcIdent.setMinWidth(200);
         tcIdent.setEditable(false);
         tcIdent.setReorderable(false);
         tcIdent.setCellValueFactory(new PropertyValueFactory<>("ident"));
         // Msg Evento
-        TableColumn tcMsg = new TableColumn("Mensagem");
+        TableColumn<EventModel,String> tcMsg = new TableColumn<>("Mensagem");
         tcMsg.setEditable(false);
         tcMsg.setMinWidth(200);
         tcMsg.setReorderable(false);
         tcMsg.setCellValueFactory(new PropertyValueFactory<>("msg"));
         // Anos
-        TableColumn tcAnos = new TableColumn("Anos");
+        TableColumn<EventModel,Integer> tcAnos = new TableColumn<>("Anos");
         tcAnos.setEditable(false);
         tcAnos.setReorderable(false);
         tcAnos.setCellValueFactory(new PropertyValueFactory<>("anos"));
         // Meses
-        TableColumn tcMeses = new TableColumn("Meses");
+        TableColumn<EventModel,Integer> tcMeses = new TableColumn<>("Meses");
         tcMeses.setEditable(false);
         tcMeses.setReorderable(false);
         tcMeses.setCellValueFactory(new PropertyValueFactory<>("meses"));
         // Semanas
-        TableColumn tcSemanas = new TableColumn("Semanas");
+        TableColumn<EventModel,Integer> tcSemanas = new TableColumn<>("Semanas");
         tcSemanas.setEditable(false);
         tcSemanas.setReorderable(false);
         tcSemanas.setCellValueFactory(new PropertyValueFactory<>("semanas"));
         // Dias
-        TableColumn tcDias = new TableColumn("Dias");
+        TableColumn<EventModel,Integer> tcDias = new TableColumn<>("Dias");
         tcDias.setEditable(false);
         tcDias.setReorderable(false);
         tcDias.setCellValueFactory(new PropertyValueFactory<>("dias"));
         // Horas
-        TableColumn tcHoras = new TableColumn("Horas");
+        TableColumn<EventModel,Integer> tcHoras = new TableColumn<>("Horas");
         tcHoras.setEditable(false);
         tcHoras.setReorderable(false);
         tcHoras.setCellValueFactory(new PropertyValueFactory<>("horas"));
         // Minutos
-        TableColumn tcMinutos = new TableColumn("Minutos");
+        TableColumn<EventModel,Integer> tcMinutos = new TableColumn<>("Minutos");
         tcMinutos.setEditable(false);
         tcMinutos.setReorderable(false);
         tcMinutos.setCellValueFactory(new PropertyValueFactory<>("minutos"));
@@ -116,7 +133,7 @@ public class HomeController {
 
                 case "Todos": {
 
-                    criarTable();
+                    eventsTable.getItems().clear();
                     valoresButton.getItems().clear();
                     valoresButton.setDisable(true);
                     for (Event e : this.le.getEventos().values()) {
@@ -169,8 +186,6 @@ public class HomeController {
     @FXML
     public void btValoresAction(){
 
-        criarTable();
-
         if(valoresButton.getValue() != null && criterioButton.getValue() != null) {
 
             List<Event> eventos;
@@ -199,11 +214,18 @@ public class HomeController {
                     break;
                 }
             }
+            /* Obtemos o lock para a tabela */
+            this.tableLock.lock();
+            eventsTable.getItems().clear();
+            List<EventModel> atual = new ArrayList<>();
             // Adicionar os eventos
             for (Event e : eventos) {
                 EventModel em = new EventModel(e.getIndex(), e.getIdentificacao(), e.getMsg(), e.getAnos(), e.getMeses(), e.getSemanas(), e.getDias(), e.getHoras(), e.getMinutos());
-                eventsTable.getItems().add(em);
+                atual.add(em);
             }
+            eventsTable.getItems().addAll(atual);
+            /* Cedemos o respetivo lock */
+            this.tableLock.unlock();
         }
     }
 

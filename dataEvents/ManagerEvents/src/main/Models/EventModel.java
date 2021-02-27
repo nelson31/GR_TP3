@@ -1,5 +1,7 @@
 package main.Models;
 
+import java.util.Objects;
+
 public class EventModel {
 
     private Integer index;
@@ -95,5 +97,37 @@ public class EventModel {
 
     public void setMinutos(Integer minutos) {
         this.minutos = minutos;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        EventModel that = (EventModel) o;
+        return index.equals(that.index);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(index);
+    }
+
+    @Override
+    public String toString() {
+        return "EventModel{" +
+                "index=" + index +
+                ", ident='" + ident + '\'' +
+                ", msg='" + msg + '\'' +
+                ", anos=" + anos +
+                ", meses=" + meses +
+                ", semanas=" + semanas +
+                ", dias=" + dias +
+                ", horas=" + horas +
+                ", minutos=" + minutos +
+                '}';
     }
 }

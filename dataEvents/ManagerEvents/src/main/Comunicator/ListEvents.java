@@ -29,11 +29,11 @@ public class ListEvents {
 
     // getters and setters
 
-    public Map<Integer, Event> getEventos() {
+    public synchronized Map<Integer, Event> getEventos() {
         return eventos;
     }
 
-    public void setEventos(Map<Integer, Event> eventos) {
+    public synchronized void setEventos(Map<Integer, Event> eventos) {
         this.eventos = eventos;
     }
 
@@ -130,7 +130,7 @@ public class ListEvents {
      * @return
      * @throws RuntimeException
      */
-    public void gerePedidos() throws RuntimeException{
+    public synchronized void gerePedidos() throws RuntimeException{
 
         // Envia o pedido especificado nos oids e recebe uma tabela com o
         // resultado dos pedidos efetuados
@@ -187,7 +187,7 @@ public class ListEvents {
      * Obter os anos todos de um conjunto de eventos
      * @return
      */
-    public Set<String> getAnos(){
+    public synchronized Set<String> getAnos(){
 
         Set<String> res = new TreeSet<>();
 
@@ -203,7 +203,7 @@ public class ListEvents {
      * Obter os meses todos de um conjunto de eventos
      * @return
      */
-    public Set<String> getMeses(){
+    public synchronized Set<String> getMeses(){
 
         Set<String> res = new TreeSet<>();
 
@@ -219,7 +219,7 @@ public class ListEvents {
      * Obter os semanas todos de um conjunto de eventos
      * @return
      */
-    public Set<String> getSemanas(){
+    public synchronized Set<String> getSemanas(){
 
         Set<String> res = new TreeSet<>();
 
@@ -235,7 +235,7 @@ public class ListEvents {
      * Obter os semanas todos de um conjunto de eventos
      * @return
      */
-    public Set<String> getDias(){
+    public synchronized Set<String> getDias(){
 
         Set<String> res = new TreeSet<>();
 
@@ -252,7 +252,7 @@ public class ListEvents {
      * @param ano
      * @return
      */
-    public List<Event> getEventosAno(String ano){
+    public synchronized List<Event> getEventosAno(String ano){
 
         List<Event> res = new ArrayList<>();
 
@@ -270,7 +270,7 @@ public class ListEvents {
      * @param mes
      * @return
      */
-    public List<Event> getEventosMes(String mes){
+    public synchronized List<Event> getEventosMes(String mes){
 
         List<Event> res = new ArrayList<>();
 
@@ -288,7 +288,7 @@ public class ListEvents {
      * @param semana
      * @return
      */
-    public List<Event> getEventosSemana(String semana){
+    public synchronized List<Event> getEventosSemana(String semana){
 
         List<Event> res = new ArrayList<>();
 
@@ -306,7 +306,7 @@ public class ListEvents {
      * @param dia
      * @return
      */
-    public List<Event> getEventosDia(String dia){
+    public synchronized List<Event> getEventosDia(String dia){
 
         List<Event> res = new ArrayList<>();
 
