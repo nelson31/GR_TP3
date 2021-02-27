@@ -43,7 +43,7 @@
     <configuration name="ManagerEventsApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.ManagerEventsApp" />
       <module name="ManagerEvents" />
-      <option name="VM_PARAMETERS" value="--module-path $PROJECT_DIR$/../../../../../TP2/GR2020_TP2.git/trunk/Modulo2/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path $PROJECT_DIR$/../dependencias/javafx-sdk-15.0.1/lib --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -66,7 +66,7 @@
       </list>
     </option>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -81,10 +81,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="418" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614179253663">
+    <state x="418" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614424954110">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state x="418" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1033@0.0.1920.1033" timestamp="1614179253663" />
+    <state x="418" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1033@0.0.1920.1033" timestamp="1614424954110" />
     <state x="768" y="219" width="374" height="595" key="#com.intellij.ide.util.MemberChooser" timestamp="1614163844039">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
@@ -97,26 +97,26 @@
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
     <state x="743" y="273" width="744" height="486" key="FileChooserDialogImpl/0.0.1920.1033@0.0.1920.1033" timestamp="1614178740713" />
-    <state width="1920" height="277" key="GridCell.Tab.0.bottom" timestamp="1614189416026">
+    <state width="1920" height="277" key="GridCell.Tab.0.bottom" timestamp="1614426235968">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state width="1920" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1033@0.0.1920.1033" timestamp="1614189416026" />
-    <state width="1920" height="277" key="GridCell.Tab.0.center" timestamp="1614189416022">
+    <state width="1920" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1033@0.0.1920.1033" timestamp="1614426235968" />
+    <state width="1920" height="277" key="GridCell.Tab.0.center" timestamp="1614426235965">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state width="1920" height="277" key="GridCell.Tab.0.center/0.0.1920.1033@0.0.1920.1033" timestamp="1614189416022" />
-    <state width="1920" height="277" key="GridCell.Tab.0.left" timestamp="1614189416021">
+    <state width="1920" height="277" key="GridCell.Tab.0.center/0.0.1920.1033@0.0.1920.1033" timestamp="1614426235965" />
+    <state width="1920" height="277" key="GridCell.Tab.0.left" timestamp="1614426235964">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state width="1920" height="277" key="GridCell.Tab.0.left/0.0.1920.1033@0.0.1920.1033" timestamp="1614189416021" />
-    <state width="1920" height="277" key="GridCell.Tab.0.right" timestamp="1614189416024">
+    <state width="1920" height="277" key="GridCell.Tab.0.left/0.0.1920.1033@0.0.1920.1033" timestamp="1614426235963" />
+    <state width="1920" height="277" key="GridCell.Tab.0.right" timestamp="1614426235966">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state width="1920" height="277" key="GridCell.Tab.0.right/0.0.1920.1033@0.0.1920.1033" timestamp="1614189416024" />
-    <state x="443" y="93" width="1024" height="847" key="SettingsEditor" timestamp="1614179226693">
+    <state width="1920" height="277" key="GridCell.Tab.0.right/0.0.1920.1033@0.0.1920.1033" timestamp="1614426235966" />
+    <state x="443" y="93" width="1024" height="847" key="SettingsEditor" timestamp="1614424944161">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>
-    <state x="443" y="93" width="1024" height="847" key="SettingsEditor/0.0.1920.1033@0.0.1920.1033" timestamp="1614179226693" />
+    <state x="443" y="93" width="1024" height="847" key="SettingsEditor/0.0.1920.1033@0.0.1920.1033" timestamp="1614424944161" />
     <state x="615" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1614160345623">
       <screen x="0" y="0" width="1920" height="1033" />
     </state>

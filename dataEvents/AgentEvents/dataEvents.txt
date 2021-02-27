@@ -1,4 +1,4 @@
-"Final do 1ºSemestre 2020-2021";"O Semestre já acabou há:";"Enfim, terminou o semestre! Ufff!";"O final do Semestre tá quase, faltam:";2021-02-28;00:00;2021-03-02;20:00
-"Entrega TP3";"Já passou o prazo de entrega!!!!";"É para entregar agora!!!";"Ainda falta para a entrega:";2021-02-28;00:00;2021-03-20;12:00
-"Jogo Juventus-Porto";"O jogo já aconteceu à:";"O jogo é hoje!!!";"AInda falta para o jogo:";2021-03-02;20:00;2021-03-06;20:00
+"Final do 1Semestre 2020-2021";"O Semestre ja acabou ha:";"Enfim, terminou o semestre! Ufff!";"O final do Semestre ta quase, faltam:";2021-02-28;00:00;2021-03-02;20:00
+"Jogo Juventus-Porto";"O jogo ja aconteceu a:";"O jogo e hoje!!!";"AInda falta para o jogo:";2021-03-02;20:00;2021-03-06;20:00
 "Jogo Porto-Sporting";"Ganhamos";"Estamos a ganhar";"O Porto vai ganhar";2021-02-27;20:30;2021-03-04;21:00
+"Inicio aulas 2 semestre";"As aulas ja comecar ha:";"As aulas comecam hoje!";"AInda falta para comecar as aulas:";2021-02-18;09:00;2021-02-27;20:00

@@ -33,7 +33,7 @@ public class ManagerEventsApp extends Application {
             primaryStage.setResizable(false);
             primaryStage.show();
         } catch (Exception e){
-            System.out.println("Não foi possível iniciar a aplicação!!");
+            System.out.println("Não foi possível iniciar a aplicação!! Verifique se o Agente está a correr!!");
             System.exit(1);
         }
     }

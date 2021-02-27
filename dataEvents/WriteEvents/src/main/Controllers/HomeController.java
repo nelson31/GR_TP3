@@ -8,7 +8,6 @@ import main.Models.EventModel;
 import main.Models.ListEvents;
 import main.Models.Writer;
 
-import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -91,10 +90,8 @@ public class HomeController {
                     && datadelButton.getEditor().getText().length() != 0
                     && horaButton.getText().length() != 0
                     && horadelButton.getText().length() != 0) {
-                System.out.println("Agendar");
 
                 this.writeEvento();
-                //this.moveFicheiro();
                 lancaAlerta(Alert.AlertType.CONFIRMATION, "Evento agendado", "Confirmado", "Evento agendado com sucesso!!!");
             } else {
                 lancaAlerta(Alert.AlertType.ERROR, "Erro no registo", "Erro nos argumentos", "Não foi possível agendar o evento!!!");
@@ -128,15 +125,13 @@ public class HomeController {
     public void btEliminarAction(){
 
         List<Event> lista = this.le.getEventos();
-        int ind = Integer.parseInt(insereIndexButton.getText());
         try {
+            int ind = Integer.parseInt(insereIndexButton.getText());
             if (ind <= lista.size()) {
 
                 lista.remove(ind - 1);
 
                 Writer.create(this.le.toString(),EVENTS_DIR + EVENTS_FILENAME);
-
-                //this.moveFicheiro();
 
                 lancaAlerta(Alert.AlertType.CONFIRMATION, "Evento eliminado", "Eliminado", "Evento eliminado com sucesso!!!");
             } else {
@@ -153,8 +148,6 @@ public class HomeController {
             this.cleanFields();
             this.initialize();
         }
-
-        System.out.println("Eliminar!!");
     }
 
     @FXML
@@ -194,19 +187,6 @@ public class HomeController {
         datadelButton.getEditor().clear();
         horadelButton.clear();
         insereIndexButton.clear();
-    }
-
-    /**
-     * Move o ficheiro temporario para o destino
-     * @return
-     */
-    private boolean moveFicheiro(){
-
-        File dataEvents = new File(EVENTS_FILENAME);
-
-        File diretoriadestino = new File(EVENTS_DIR);
-
-        return dataEvents.renameTo(new File(diretoriadestino,dataEvents.getName()));
     }
 
 }
