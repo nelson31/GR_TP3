@@ -71,3 +71,10 @@ DATA-EVENTS-MIB.txt
 =======
 
 Este ficheiro é a implementação em SMI da MIB usada no projeto e que foi gerado pela aplicação MIB Designer para posteriormente ser usado pelo AgenPro para gerar o código Java do agente!!!
+
+
+codigo_gerado_agenpro
+=======
+
+Esta pasta só esta aqui porque é o código que foi gerado pelo AgenPro e que depois nós adaptamos na aplicação AgentEvents!!!
+
